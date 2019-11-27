@@ -1,0 +1,208 @@
+fileFormatVersion: 2
+guid: 06b6828b9a8f9394dbdfc55cd1d8c012
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: default
+    100002: default001
+    100004: default002
+    100006: default003
+    100008: //RootNode
+    100010: Object001
+    100012: Object002
+    100014: Object004
+    100016: Object005
+    100018: Object006
+    100020: Object007
+    100022: Object008
+    100024: Object009
+    400000: default
+    400002: default001
+    400004: default002
+    400006: default003
+    400008: //RootNode
+    400010: Object001
+    400012: Object002
+    400014: Object004
+    400016: Object005
+    400018: Object006
+    400020: Object007
+    400022: Object008
+    400024: Object009
+    2100000: 07 - Default
+    2100002: 03 - Default
+    2100004: Gun_Camera_Glass
+    2100006: 09 - Default
+    2100008: Gun_Covers
+    2100010: 01 - Default
+    2100012: 02 - Default
+    2100014: 08 - Default
+    2100016: Gun_Lens
+    2100018: Aft_Vents
+    2100020: Engine_Nozzle
+    2100022: Engine
+    2100024: Engine_Dark
+    2100026: Engine_Nozzle_Ring
+    2100028: Engine_FireWall_Cutout
+    2100030: Thrusters
+    2100032: Target_Laser
+    2100034: Default
+    2100036: Rings
+    2100038: Rings_Center
+    2100040: Target_Laser2
+    2100042: Target_Laser3
+    2100044: Ant
+    2100046: Disk3
+    2100048: Front_Trim
+    2100050: Cylinder_Ring
+    2100052: Cylinder_Vent
+    2100054: Cylinder_Grill
+    2100056: Engine_Tubes
+    2100058: Nozzle_Cap
+    2100060: Nozzle_Ring1
+    2100062: Engine2_Sphere
+    2100064: Nozzle_Ring2
+    2100066: Nozzles
+    2100068: Nozzles_Inner
+    2100070: Nozzle_Fins
+    2100072: Round_Plate
+    2100074: Gun_Camera_Lens
+    2100076: Gun_Camera
+    2100078: Gun_Camera_Tubes
+    2100080: Gun_Camera_Mounts
+    2100082: Gun_Armor
+    2100084: Guns
+    2100086: Gun_Domes_Dark
+    2100088: Gun_Domes
+    2100090: Target_Laser_Lens
+    2100092: Eye_Metal
+    2100094: Eye_Metal_Cuts
+    2100096: Eye_Pivots
+    2100098: Eye
+    2100100: Hex_Plate
+    2100102: Body_Back_Flat
+    2100104: Body_Aft
+    2100106: Body_Back
+    2100108: Body_Aft_Lower
+    2100110: Body_Back_Sides
+    2100112: Numbers
+    2300000: default
+    2300002: default001
+    2300004: default002
+    2300006: default003
+    2300008: Object001
+    2300010: Object002
+    2300012: Object004
+    2300014: Object005
+    2300016: Object006
+    2300018: Object007
+    2300020: Object008
+    2300022: Object009
+    3300000: default
+    3300002: default001
+    3300004: default002
+    3300006: default003
+    3300008: Object001
+    3300010: Object002
+    3300012: Object004
+    3300014: Object005
+    3300016: Object006
+    3300018: Object007
+    3300020: Object008
+    3300022: Object009
+    4300000: Object004
+    4300002: default002
+    4300004: default003
+    4300006: Object005
+    4300008: Object006
+    4300010: Object007
+    4300012: Object008
+    4300014: Object001
+    4300016: Object002
+    4300018: default001
+    4300020: default
+    4300022: Object009
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

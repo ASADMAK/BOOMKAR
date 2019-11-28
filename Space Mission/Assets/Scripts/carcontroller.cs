@@ -33,9 +33,6 @@ public class carcontroller : MonoBehaviour
     private bool isacid;
     private bool isreverse;
 
-    public GameObject[] marks;
-    public GameObject[] star;
-    public GameObject[] levelcompletestar;
     public GameObject finalindicator;
     public GameObject missionfailed, game;
     public Slider fuelmeter;
@@ -205,37 +202,16 @@ public class carcontroller : MonoBehaviour
     public void tirebreakoff()
     {
         isbreaking = false;
+        isreverse = false;
+        forward = 0;
     }
     public void booston()
     {
         forward = 1;
-        isreverse = false;
     }
     public void boostoff()
     {
         forward = 0;
-    }
-    public void playerstar()
-    {
-        stars++;
-
-        switch (stars)
-        {
-            case 1:
-                star[0].SetActive(true);
-                levelcompletestar[0].SetActive(true);
-                break;
-            case 2:
-                star[1].SetActive(true);
-                levelcompletestar[1].SetActive(true);
-                break;
-            case 3:
-                star[2].SetActive(true);
-                levelcompletestar[2].SetActive(true);
-                break;
-
-
-        }
     }
     public void floppycollect()
     {

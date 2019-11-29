@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class gamemanagar : MonoBehaviour {
 
+   
     public void changescene(int n)
     {
         SceneManager.LoadScene(n);

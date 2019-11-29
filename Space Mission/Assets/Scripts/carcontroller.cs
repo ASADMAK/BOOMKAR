@@ -35,6 +35,7 @@ public class carcontroller : MonoBehaviour
 
     public GameObject finalindicator;
     public GameObject missionfailed, game;
+    public GameObject watersplash;
     public Slider fuelmeter;
     public Slider playerhealth;
 
@@ -222,10 +223,12 @@ public class carcontroller : MonoBehaviour
     public void acidin()
     {
         isacid = true;
+        watersplash.SetActive(true);
     }
     public void acidout()
     {
         isacid = false;
+        watersplash.SetActive(false);
     }
     public void increasegold()
     {

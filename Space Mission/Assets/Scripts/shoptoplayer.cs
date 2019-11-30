@@ -9,7 +9,8 @@ public class shoptoplayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        skin = PlayerPrefs.GetInt("skin", 0);
+        skin = PlayerPrefs.GetInt("Skin", 0);
+        Debug.Log(skin);
         cars[skin].SetActive(true);
 	}
 	

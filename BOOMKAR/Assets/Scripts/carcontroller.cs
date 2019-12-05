@@ -32,6 +32,7 @@ public class carcontroller : MonoBehaviour
     private bool isaccelrating;
     private bool isacid;
     private bool isreverse;
+    private bool gameispaused = false;
 
     public GameObject finalindicator;
     public GameObject missionfailed, game;
@@ -42,8 +43,12 @@ public class carcontroller : MonoBehaviour
     public TextMeshProUGUI minfloopy;
     public TextMeshProUGUI maxfloopy;
     public TextMeshProUGUI cointext;
+    public TextMeshProUGUI coincollected1, coincollected2, keys1, keys2;
+    public TextMeshProUGUI gascan1, gascan2, coin1, coin2;
 
     private int floppycollected = 0;
+    private int moneycollected;
+    private int gascanno;
     private int stars = 0;
     private int money;
     public int numberoffloppy;
@@ -132,13 +137,16 @@ public class carcontroller : MonoBehaviour
                     axleInfo.rightWheel.motorTorque = motor;
                 }
             }
-            Debug.Log(rb.velocity.magnitude);
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
         if (rb.velocity.magnitude > heighestspeed)
         {
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, heighestspeed);
+        }
+        if (gameispaused == true)
+        {
+            rb.velocity = new Vector3(0, 0, 0);
         }
     }
     public void Update()
@@ -162,20 +170,24 @@ public class carcontroller : MonoBehaviour
         }
         else
         {
-            missionfailed.SetActive(true);
+            gameover();
         }
-        fuelmeter.value -= Time.deltaTime;
+        if (gameispaused == false)
+            fuelmeter.value -= Time.deltaTime;
         if (floppycollected == numberoffloppy)
         {
             finalindicator.SetActive(true);
             FindObjectOfType<complete>().done();
+            gamecomplete();
         }
         if (isacid == true)
         {
-            playerhealth.value -= Time.deltaTime;
+            if (gameispaused == false)
+                playerhealth.value -= Time.deltaTime;
             if (playerhealth.value <= 0)
             {
-                missionfailed.SetActive(true);
+
+                gameover();
             }
         }
     }
@@ -195,6 +207,7 @@ public class carcontroller : MonoBehaviour
     public void refill_Fuel()
     {
         fuelmeter.value += 30;
+        gascanno++;
     }
     public void tirebreak()
     {
@@ -233,7 +246,32 @@ public class carcontroller : MonoBehaviour
     public void increasegold()
     {
         money++;
+        moneycollected++;
         PlayerPrefs.SetInt("gold", money);
+    }
+    public void gamepaused()
+    {
+        gameispaused = true;
+    }
+    public void gameison()
+    {
+        gameispaused = false;
+    }
+    public void gameover()
+    {
+        game.SetActive(false);
+        missionfailed.SetActive(true);
+        keys1.text = floppycollected.ToString();
+        keys2.text = floppycollected.ToString();
+        coincollected1.text = moneycollected.ToString();
+        coincollected2.text = moneycollected.ToString();
+    }
+    public void gamecomplete()
+    {
+        gascan1.text = gascanno.ToString();
+        gascan2.text = gascanno.ToString();
+        coin1.text = moneycollected.ToString();
+        coin2.text = moneycollected.ToString();
     }
 }
 

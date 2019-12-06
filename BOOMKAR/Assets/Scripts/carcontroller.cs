@@ -53,10 +53,20 @@ public class carcontroller : MonoBehaviour
     private int money;
     public int numberoffloppy;
 
+    public AudioSource engine1;
+    public AudioSource carbreaks1;
+    public AudioSource carcrash1;
+    public AudioSource gascan;
+    public AudioSource coinsound;
+    public AudioSource keysound;
+    public AudioSource levelcomplete;
+    public AudioSource levelfailed;
+    public AudioSource water;
 
     int turn, forward, back;
     [SerializeField]
 
+    
     public void Start()
     {
         money = PlayerPrefs.GetInt("gold", 0);
@@ -87,6 +97,7 @@ public class carcontroller : MonoBehaviour
 
         visualWheel.transform.position = position;
         visualWheel.transform.rotation = rotation;
+
     }
 
     public void FixedUpdate()
@@ -148,6 +159,7 @@ public class carcontroller : MonoBehaviour
         {
             rb.velocity = new Vector3(0, 0, 0);
         }
+        playaudio();
     }
     public void Update()
     {
@@ -208,16 +220,23 @@ public class carcontroller : MonoBehaviour
     {
         fuelmeter.value += 30;
         gascanno++;
+        if(!gascan.isPlaying)
+        {
+            gascan.Play();
+        }
     }
     public void tirebreak()
     {
         isbreaking = true;
+        if(!carbreaks1.isPlaying)
+        carbreaks1.Play();
     }
     public void tirebreakoff()
     {
         isbreaking = false;
         isreverse = false;
         forward = 0;
+        carbreaks1.Stop();
     }
     public void booston()
     {
@@ -232,22 +251,35 @@ public class carcontroller : MonoBehaviour
         maxfloopy.text = numberoffloppy.ToString();
         minfloopy.text = floppycollected.ToString();
         floppycollected++;
+        if(!keysound.isPlaying)
+        {
+            keysound.Play();
+        }
     }
     public void acidin()
     {
         isacid = true;
         watersplash.SetActive(true);
+        if(!water.isPlaying)
+        {
+            water.Play();
+        }
     }
     public void acidout()
     {
         isacid = false;
         watersplash.SetActive(false);
+        water.Stop();
     }
     public void increasegold()
     {
         money++;
         moneycollected++;
         PlayerPrefs.SetInt("gold", money);
+        if(!coinsound.isPlaying)
+        {
+            coinsound.Play();
+        }
     }
     public void gamepaused()
     {
@@ -265,6 +297,10 @@ public class carcontroller : MonoBehaviour
         keys2.text = floppycollected.ToString();
         coincollected1.text = moneycollected.ToString();
         coincollected2.text = moneycollected.ToString();
+        if(!levelfailed.isPlaying)
+        {
+            levelfailed.Play();
+        }
     }
     public void gamecomplete()
     {
@@ -272,6 +308,24 @@ public class carcontroller : MonoBehaviour
         gascan2.text = gascanno.ToString();
         coin1.text = moneycollected.ToString();
         coin2.text = moneycollected.ToString();
+        if(!levelcomplete.isPlaying)
+        {
+            levelcomplete.Play();
+        }
+    }
+    public void playaudio()
+    {
+        if (speedfactor < .1)
+            speedfactor = .1f;
+        engine1.pitch = speedfactor;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag== "buidling")
+        {
+            if(!carcrash1.isPlaying)
+            carcrash1.Play();
+        }
     }
 }
 

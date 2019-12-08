@@ -28,8 +28,6 @@ public class shop : MonoBehaviour
     private void Update()
     {
         money = PlayerPrefs.GetInt("gold", 0);
-        Debug.Log(PlayerPrefs.GetInt("gold"));
-        Debug.Log(PlayerPrefs.GetInt("Skin"));
         checkcost();
 
     }

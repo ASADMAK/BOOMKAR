@@ -1,0 +1,182 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
+using System;
+using TMPro;
+
+public class FortuneWheelManager : MonoBehaviour
+{
+    private bool _isStarted;
+    private float[] _sectorsAngles;
+    private float _finalAngle;
+    private float _startAngle = 0;
+    private float _currentLerpRotationTime;
+    public Button TurnButton;
+    public GameObject Circle; 			// Rotatable Object with rewards
+    public TextMeshProUGUI CoinsDeltaText;
+    public TextMeshProUGUI howmuchtimleft;
+    private int firsttime;
+    public ParticleSystem coineffect;
+    public Animator rewardplay;
+    public GameObject timeleftwindow;
+    private int money;
+
+    public void Start()
+    {
+        money= PlayerPrefs.GetInt("gold", 0);
+    }
+    public void TurnWheel ()
+    {
+      //  PlayerPrefs.DeleteAll();
+        firsttime = PlayerPrefs.GetInt("first", 0);
+        //PlayerPrefs.DeleteAll();
+        if (firsttime==0)
+        {
+            _currentLerpRotationTime = 0f;
+
+            // Fill the necessary angles (for example if you want to have 12 sectors you need to fill the angles with 30 degrees step)
+            _sectorsAngles = new float[] { 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360 };
+
+            int fullCircles = 5;
+            float randomFinalAngle = _sectorsAngles[UnityEngine.Random.Range(0, _sectorsAngles.Length)];
+
+            // Here we set up how many circles our wheel should rotate before stop
+            _finalAngle = -(fullCircles * 360 + randomFinalAngle);
+            _isStarted = true;
+
+
+            // Show wasted coins
+            CoinsDeltaText.gameObject.SetActive(true);
+        }
+        else
+        {
+            var unlockDate = DateTime.Parse(PlayerPrefs.GetString("timer"));
+            if (unlockDate < DateTime.Now)
+            {
+                _currentLerpRotationTime = 0f;
+
+                // Fill the necessary angles (for example if you want to have 12 sectors you need to fill the angles with 30 degrees step)
+                _sectorsAngles = new float[] { 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360 };
+
+                int fullCircles = 5;
+                float randomFinalAngle = _sectorsAngles[UnityEngine.Random.Range(0, _sectorsAngles.Length)];
+
+                // Here we set up how many circles our wheel should rotate before stop
+                _finalAngle = -(fullCircles * 360 + randomFinalAngle);
+                _isStarted = true;
+
+
+                // Show wasted coins
+                CoinsDeltaText.gameObject.SetActive(true);
+
+            }
+            else
+            {
+                timeleftwindow.SetActive(true);
+                TimeSpan diff = unlockDate.Subtract(DateTime.Now);
+                howmuchtimleft.text = " spin locked for " + diff.Hours + " hours and " + diff.Minutes + " more minutes ";
+            }
+
+        }
+
+
+
+    }
+
+    private void GiveAwardByAngle ()
+    {
+    	// Here you can set up rewards for every sector of wheel
+    	switch ((int)_startAngle) {
+    	case 0:
+    	    RewardCoins (1000);
+    	    break;
+    	case -330:
+    	    RewardCoins (200);
+    	    break;
+    	case -300:
+    	    RewardCoins (100);
+    	    break;
+    	case -270:
+    	    RewardCoins (500);
+    	    break;
+    	case -240:
+    	    RewardCoins (300);
+    	    break;
+    	case -210:
+    	    RewardCoins (100);
+    	    break;
+    	case -180:
+    	    RewardCoins (900);
+    	    break;
+    	case -150:
+    	    RewardCoins (200);
+    	    break;
+    	case -120:
+    	    RewardCoins (100);
+    	    break;
+    	case -90:
+    	    RewardCoins (700);
+    	    break;
+    	case -60:
+    	    RewardCoins (300);
+    	    break;
+    	case -30:
+    	    RewardCoins (100);
+    	    break;
+    	default:
+    	    RewardCoins (300);
+    	    break;
+        }
+    }
+
+    void Update ()
+    {
+
+    	if (!_isStarted)
+    	    return;
+
+    	float maxLerpRotationTime = 4f;
+    
+    	// increment timer once per frame
+    	_currentLerpRotationTime += Time.deltaTime;
+    	if (_currentLerpRotationTime > maxLerpRotationTime || Circle.transform.eulerAngles.z == _finalAngle) {
+    	    _currentLerpRotationTime = maxLerpRotationTime;
+    	    _isStarted = false;
+    	    _startAngle = _finalAngle % 360;
+    
+    	    GiveAwardByAngle ();
+    	}
+    
+    	// Calculate current position using linear interpolation
+    	float t = _currentLerpRotationTime / maxLerpRotationTime;
+    
+    	// This formulae allows to speed up at start and speed down at the end of rotation.
+    	// Try to change this values to customize the speed
+    	t = t * t * t * (t * (6f * t - 15f) + 10f);
+    
+    	float angle = Mathf.Lerp (_startAngle, _finalAngle, t);
+    	Circle.transform.eulerAngles = new Vector3 (0, 0, angle);
+    }
+
+    private void RewardCoins(int awardCoins)
+    {
+        money += awardCoins;
+        rewardplay.SetBool("reward", true);
+        CoinsDeltaText.text = "+"+awardCoins.ToString() ;
+        PlayerPrefs.SetString("timer", DateTime.Now.AddDays(1).ToString());
+        PlayerPrefs.SetInt("first", 2);
+        coineffect.Play();
+        Invoke("stopnim", 2.5f);
+        PlayerPrefs.SetInt("gold", money);
+    }
+
+    public void stopnim()
+    {
+        rewardplay.SetBool("reward", false);
+    }
+
+
+
+   
+}

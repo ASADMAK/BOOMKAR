@@ -19,6 +19,7 @@ public class carcontroller : MonoBehaviour
     public List<AxleInfo> axleInfos;
     Rigidbody rb;
 
+    
     public float maxMotorTorque;
     public float maxSteeringAngle;
     public float minsteeringAngle;
@@ -32,7 +33,7 @@ public class carcontroller : MonoBehaviour
     private bool isaccelrating;
     private bool isacid;
     private bool isreverse;
-    private bool gameispaused = false;
+    private bool onlyonce = false;
 
     public GameObject finalindicator;
     public GameObject missionfailed, game;
@@ -52,6 +53,7 @@ public class carcontroller : MonoBehaviour
     private int stars = 0;
     private int money;
     public int numberoffloppy;
+    private int vibrate;
 
     public AudioSource engine1;
     public AudioSource carbreaks1;
@@ -62,6 +64,11 @@ public class carcontroller : MonoBehaviour
     public AudioSource levelcomplete;
     public AudioSource levelfailed;
     public AudioSource water;
+    public AudioSource splash_audio;
+
+    public ParticleSystem splash;
+
+    private Vector3 oldvelocity;
 
     int turn, forward, back;
     [SerializeField]
@@ -79,7 +86,7 @@ public class carcontroller : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = new Vector3(0, -1f, .05f);
         maxfloopy.text = numberoffloppy.ToString();
-
+        vibrate = PlayerPrefs.GetInt("vibration", 1);
     }
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
@@ -102,6 +109,7 @@ public class carcontroller : MonoBehaviour
 
     public void FixedUpdate()
     {
+       
         speedfactor = rb.velocity.magnitude / heighestspeed;
         currentsteer = Mathf.Lerp(maxSteeringAngle, minsteeringAngle, speedfactor);
         float motor = maxMotorTorque * forward;
@@ -125,6 +133,15 @@ public class carcontroller : MonoBehaviour
                         axleInfo.rightWheel.motorTorque = motor;
                         axleInfo.leftWheel.brakeTorque = 0;
                         axleInfo.rightWheel.brakeTorque = 0;
+                         if (axleInfo.rightWheel.rpm < 0)
+                        {
+                            if (isaccelrating == true)
+                            {
+                                axleInfo.leftWheel.motorTorque = 10*motor;
+                                axleInfo.rightWheel.motorTorque = 10*motor;
+                            }
+                            
+                        }
                     }
                     else if (isbreaking == true)
                     {
@@ -155,14 +172,11 @@ public class carcontroller : MonoBehaviour
         {
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, heighestspeed);
         }
-        if (gameispaused == true)
-        {
-            rb.velocity = new Vector3(0, 0, 0);
-        }
         playaudio();
     }
     public void Update()
     {
+        
         minfloopy.text = floppycollected.ToString();
         cointext.text = money.ToString();
         if (fuelmeter.value > 0)
@@ -184,8 +198,6 @@ public class carcontroller : MonoBehaviour
         {
             gameover();
         }
-        if (gameispaused == false)
-            fuelmeter.value -= Time.deltaTime;
         if (floppycollected == numberoffloppy)
         {
             finalindicator.SetActive(true);
@@ -194,8 +206,7 @@ public class carcontroller : MonoBehaviour
         }
         if (isacid == true)
         {
-            if (gameispaused == false)
-                playerhealth.value -= Time.deltaTime;
+
             if (playerhealth.value <= 0)
             {
 
@@ -224,6 +235,8 @@ public class carcontroller : MonoBehaviour
         {
             gascan.Play();
         }
+        if(vibrate==1)
+        Handheld.Vibrate();
     }
     public void tirebreak()
     {
@@ -241,10 +254,12 @@ public class carcontroller : MonoBehaviour
     public void booston()
     {
         forward = 1;
+        isaccelrating = true;
     }
     public void boostoff()
     {
         forward = 0;
+        isaccelrating = false;
     }
     public void floppycollect()
     {
@@ -255,6 +270,8 @@ public class carcontroller : MonoBehaviour
         {
             keysound.Play();
         }
+        if (vibrate == 1)
+            Handheld.Vibrate();
     }
     public void acidin()
     {
@@ -264,12 +281,20 @@ public class carcontroller : MonoBehaviour
         {
             water.Play();
         }
+        if(onlyonce==false)
+        {
+            splash.Play();
+            splash_audio.Play();
+            onlyonce = true;
+        }
+       
     }
     public void acidout()
     {
         isacid = false;
         watersplash.SetActive(false);
         water.Stop();
+        onlyonce = false;
     }
     public void increasegold()
     {
@@ -280,14 +305,16 @@ public class carcontroller : MonoBehaviour
         {
             coinsound.Play();
         }
+        if (vibrate == 1)
+            Handheld.Vibrate();
     }
     public void gamepaused()
     {
-        gameispaused = true;
+        Time.timeScale = 0;
     }
     public void gameison()
     {
-        gameispaused = false;
+        Time.timeScale = 1;
     }
     public void gameover()
     {

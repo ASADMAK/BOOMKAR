@@ -14,16 +14,12 @@ public class cameraround : MonoBehaviour {
     {
 
         transform.position = transform.forward * distance + Player.position;
-
-    }
-
-    void FixedUpdate()
-    {
-        // if you want a angle on your camera
         offset = new Vector3(Player.position.x, 10, Player.position.z);
 
         //Player.position = offset;
-        transform.RotateAround(Player.position, Vector3.up,speed * Time.deltaTime);
-       
-   }
+        transform.RotateAround(Player.position, Vector3.up, speed*Time.unscaledDeltaTime);
+
+
+    }
+
 }

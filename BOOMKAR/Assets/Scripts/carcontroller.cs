@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class carcontroller : MonoBehaviour
 {
@@ -54,6 +55,8 @@ public class carcontroller : MonoBehaviour
     private int money;
     public int numberoffloppy;
     private int vibrate;
+    private int highestlevel;
+    private int currentlevel;
 
     public AudioSource engine1;
     public AudioSource carbreaks1;
@@ -72,8 +75,16 @@ public class carcontroller : MonoBehaviour
 
     int turn, forward, back;
     [SerializeField]
+    public void Awake()
+    {
+        currentlevel = SceneManager.GetActiveScene().buildIndex;
+        highestlevel = PlayerPrefs.GetInt("hightest", 1);
+        if(currentlevel-1>highestlevel)
+        {
+            PlayerPrefs.SetInt("hightest", highestlevel+1);
+        }
+    }
 
-    
     public void Start()
     {
         money = PlayerPrefs.GetInt("gold", 0);
@@ -87,6 +98,7 @@ public class carcontroller : MonoBehaviour
         rb.centerOfMass = new Vector3(0, -1f, .05f);
         maxfloopy.text = numberoffloppy.ToString();
         vibrate = PlayerPrefs.GetInt("vibration", 1);
+        
     }
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
     {

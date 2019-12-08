@@ -18,6 +18,7 @@ public class settingmanager : MonoBehaviour {
         gamemusicvolume = PlayerPrefs.GetFloat("music", 1);
         music.value = gamemusicvolume;
         sound.value = soundvolume;
+        DontDestroyOnLoad(gameObject);
     }
 	
 	// Update is called once per frame

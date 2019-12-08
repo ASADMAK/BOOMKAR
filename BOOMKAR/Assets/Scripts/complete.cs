@@ -6,6 +6,7 @@ public class complete : MonoBehaviour {
 
     bool levelcomplete;
     public GameObject missioncomplete,game;
+    public AudioSource levelcompleted;
 	// Use this for initialization
 	void Start () {
 		
@@ -19,6 +20,7 @@ public class complete : MonoBehaviour {
                 missioncomplete.SetActive(true);
                 game.SetActive(false);
                 Time.timeScale = 0;
+                levelcompleted.Play();
             }
         }
     }

@@ -61,13 +61,13 @@ public class carcontroller : MonoBehaviour
     public AudioSource gascan;
     public AudioSource coinsound;
     public AudioSource keysound;
-    public AudioSource levelcomplete;
     public AudioSource levelfailed;
     public AudioSource water;
     public AudioSource splash_audio;
 
     public ParticleSystem splash;
-
+    public Animator fuelanim;
+    public Animator healthanim;
     private Vector3 oldvelocity;
 
     int turn, forward, back;
@@ -179,6 +179,7 @@ public class carcontroller : MonoBehaviour
         
         minfloopy.text = floppycollected.ToString();
         cointext.text = money.ToString();
+        fuelmeter.value -= Time.deltaTime;
         if (fuelmeter.value > 0)
         {
             if (turningleft == true && turningright == false)
@@ -206,12 +207,37 @@ public class carcontroller : MonoBehaviour
         }
         if (isacid == true)
         {
-
+            playerhealth.value -= Time.deltaTime;
             if (playerhealth.value <= 0)
             {
 
                 gameover();
             }
+        }
+        else if(isacid==false)
+        {
+            playerhealth.value += Time.deltaTime;
+            if (playerhealth.value >= 50)
+            {
+
+                playerhealth.value = 50;
+            }
+        }
+        if(fuelmeter.value<50)
+        {
+            fuelanim.SetBool("fuellow",true);
+        }
+        else if (fuelmeter.value < 50)
+        {
+            fuelanim.SetBool("fuellow", false);
+        }
+        if(playerhealth.value<20)
+        {
+            healthanim.SetBool("healthloww", true);
+        }
+        else if (playerhealth.value > 20)
+        {
+            healthanim.SetBool("healthloww", false);
         }
     }
     public void leftturn()
@@ -335,10 +361,6 @@ public class carcontroller : MonoBehaviour
         gascan2.text = gascanno.ToString();
         coin1.text = moneycollected.ToString();
         coin2.text = moneycollected.ToString();
-        if(!levelcomplete.isPlaying)
-        {
-            levelcomplete.Play();
-        }
     }
     public void playaudio()
     {

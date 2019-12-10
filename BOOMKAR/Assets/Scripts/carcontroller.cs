@@ -69,6 +69,7 @@ public class carcontroller : MonoBehaviour
     public AudioSource splash_audio;
 
     public ParticleSystem splash;
+    public ParticleSystem coindouble;
     public Animator fuelanim;
     public Animator healthanim;
     private Vector3 oldvelocity;
@@ -343,8 +344,6 @@ public class carcontroller : MonoBehaviour
         {
             coinsound.Play();
         }
-        if (vibrate == 1)
-            Handheld.Vibrate();
     }
     public void gamepaused()
     {
@@ -387,6 +386,19 @@ public class carcontroller : MonoBehaviour
             if(!carcrash1.isPlaying)
             carcrash1.Play();
         }
+    }
+    public void revived()
+    {
+        game.SetActive(true);
+        missionfailed.SetActive(false);
+        playerhealth.value = 50;
+        fuelmeter.value = 200;
+    }
+    public void doublecoin()
+    {
+        money += moneycollected;
+        PlayerPrefs.SetInt("gold", money);
+        coindouble.Play();
     }
 }
 

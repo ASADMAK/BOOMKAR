@@ -7,6 +7,9 @@ public class complete : MonoBehaviour {
     bool levelcomplete;
     public GameObject missioncomplete,game;
     public AudioSource levelcompleted;
+    public Animator ship;
+    public GameObject cameraa,player;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,14 +20,23 @@ public class complete : MonoBehaviour {
         {
             if (other.tag == "player")
             {
-                missioncomplete.SetActive(true);
-                game.SetActive(false);
-                Time.timeScale = 0;
-                levelcompleted.Play();
+   
+                cameraa.SetActive(false);
+                player.SetActive(false);
+                ship.SetBool("iscomplete", true);
+                Invoke("completeanim", 5);
+
+               
             }
         }
     }
 
+    public void completeanim()
+    {
+        missioncomplete.SetActive(true);
+        game.SetActive(false);
+        levelcompleted.Play();
+    }
     // Update is called once per frame
     void Update () {
 		

@@ -1,0 +1,247 @@
+fileFormatVersion: 2
+guid: 59a90a421c14f614c91123518c1d4a62
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Box001
+    100004: Box002
+    100006: Box003
+    100008: Box004
+    100010: Box005
+    100012: Cylinder001
+    100014: Cylinder002
+    100016: Cylinder003
+    100018: Cylinder004
+    100020: Cylinder005
+    100022: Cylinder006
+    100024: Kamera04
+    100026: Kamera04.Target
+    100028: Layer:3D_Arazi_bahceyesil
+    100030: Layer:3D_Arazi_duvar
+    100032: Layer:3D_Arazi_duvar1
+    100034: Layer:gri kompozit
+    100036: "Layer:sa\xE7ak beyaz kompozit"
+    100038: Layer:seffaf cam
+    100040: "Layer:siyah \xE7er\xE7eve"
+    100042: Object004
+    100044: Object005
+    100046: Object006
+    100048: Object007
+    100050: Object008
+    100052: Object009
+    100054: Object010
+    100056: Object011
+    100058: Object012
+    100060: VRayLight01
+    100062: VRaySun01
+    100064: VRaySun01.Target
+    400000: //RootNode
+    400002: Box001
+    400004: Box002
+    400006: Box003
+    400008: Box004
+    400010: Box005
+    400012: Cylinder001
+    400014: Cylinder002
+    400016: Cylinder003
+    400018: Cylinder004
+    400020: Cylinder005
+    400022: Cylinder006
+    400024: Kamera04
+    400026: Kamera04.Target
+    400028: Layer:3D_Arazi_bahceyesil
+    400030: Layer:3D_Arazi_duvar
+    400032: Layer:3D_Arazi_duvar1
+    400034: Layer:gri kompozit
+    400036: "Layer:sa\xE7ak beyaz kompozit"
+    400038: Layer:seffaf cam
+    400040: "Layer:siyah \xE7er\xE7eve"
+    400042: Object004
+    400044: Object005
+    400046: Object006
+    400048: Object007
+    400050: Object008
+    400052: Object009
+    400054: Object010
+    400056: Object011
+    400058: Object012
+    400060: VRayLight01
+    400062: VRaySun01
+    400064: VRaySun01.Target
+    2100000: bahceduvar
+    2100002: "bah\xE7eduvar2"
+    2100004: Cephbeyaz3
+    2100006: 02 - Defa5
+    2100008: sehpa cam
+    2100010: Cephbeyaz
+    2100012: "\xE7ims"
+    2100014: betondd
+    2100016: dosemedd
+    2100018: metal_ foil
+    2100020: tretudd
+    2300000: Box001
+    2300002: Box002
+    2300004: Box003
+    2300006: Box004
+    2300008: Box005
+    2300010: Cylinder001
+    2300012: Cylinder002
+    2300014: Cylinder003
+    2300016: Cylinder004
+    2300018: Cylinder005
+    2300020: Cylinder006
+    2300022: Layer:3D_Arazi_bahceyesil
+    2300024: Layer:3D_Arazi_duvar
+    2300026: Layer:3D_Arazi_duvar1
+    2300028: Layer:gri kompozit
+    2300030: "Layer:sa\xE7ak beyaz kompozit"
+    2300032: Layer:seffaf cam
+    2300034: "Layer:siyah \xE7er\xE7eve"
+    2300036: Object004
+    2300038: Object005
+    2300040: Object006
+    2300042: Object007
+    2300044: Object008
+    2300046: Object009
+    2300048: Object010
+    2300050: Object011
+    2300052: Object012
+    3300000: Box001
+    3300002: Box002
+    3300004: Box003
+    3300006: Box004
+    3300008: Box005
+    3300010: Cylinder001
+    3300012: Cylinder002
+    3300014: Cylinder003
+    3300016: Cylinder004
+    3300018: Cylinder005
+    3300020: Cylinder006
+    3300022: Layer:3D_Arazi_bahceyesil
+    3300024: Layer:3D_Arazi_duvar
+    3300026: Layer:3D_Arazi_duvar1
+    3300028: Layer:gri kompozit
+    3300030: "Layer:sa\xE7ak beyaz kompozit"
+    3300032: Layer:seffaf cam
+    3300034: "Layer:siyah \xE7er\xE7eve"
+    3300036: Object004
+    3300038: Object005
+    3300040: Object006
+    3300042: Object007
+    3300044: Object008
+    3300046: Object009
+    3300048: Object010
+    3300050: Object011
+    3300052: Object012
+    4300000: Layer:3D_Arazi_duvar
+    4300002: Layer:3D_Arazi_duvar1
+    4300004: Layer:gri kompozit
+    4300006: "Layer:siyah \xE7er\xE7eve"
+    4300008: Layer:seffaf cam
+    4300010: "Layer:sa\xE7ak beyaz kompozit"
+    4300012: Layer:3D_Arazi_bahceyesil
+    4300014: Object004
+    4300016: Box001
+    4300018: Box002
+    4300020: Object005
+    4300022: Object006
+    4300024: Object007
+    4300026: Object008
+    4300028: Object009
+    4300030: Object010
+    4300032: Object011
+    4300034: Object012
+    4300036: Box003
+    4300038: Box004
+    4300040: Box005
+    4300042: Cylinder001
+    4300044: Cylinder002
+    4300046: Cylinder003
+    4300048: Cylinder004
+    4300050: Cylinder005
+    4300052: Cylinder006
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

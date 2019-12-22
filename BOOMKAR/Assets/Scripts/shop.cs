@@ -20,6 +20,7 @@ public class shop : MonoBehaviour
     bool sold;
     GameObject spawnned;
     public GameObject garage;
+    public int health, fuel;
 
     public void Start()
     {   
@@ -128,6 +129,9 @@ public class shop : MonoBehaviour
             vehcial.SetActive(false);
             menu.SetActive(true);
             garage.SetActive(false);
+            PlayerPrefs.SetInt("fuel", fuel);
+            PlayerPrefs.SetInt("health", health);
+            
         }
 
     }
@@ -189,6 +193,8 @@ public class shop : MonoBehaviour
                 handling_v = .5f;
                 accelration_v = .5f;
                 nitro_v = .4f;
+                fuel = 200;
+                health = 50;
                 break;
             case 1:
                 if (PlayerPrefs.GetInt("Sold1", 0) > 1)
@@ -206,6 +212,8 @@ public class shop : MonoBehaviour
                 handling_v = .5f;
                 accelration_v = .6f;
                 nitro_v = .6f;
+                fuel = 210;
+                health = 60;
                 break;
             case 2:
 
@@ -224,6 +232,8 @@ public class shop : MonoBehaviour
                 handling_v = .5f;
                 accelration_v = .5f;
                 nitro_v = .8f;
+                fuel = 230;
+                health = 70;
                 break;
             case 3:
 
@@ -242,6 +252,8 @@ public class shop : MonoBehaviour
                 handling_v = .7f;
                 accelration_v = .8f;
                 nitro_v = .7f;
+                fuel = 250;
+                health = 80;
                 break;
             case 4:
 
@@ -260,6 +272,8 @@ public class shop : MonoBehaviour
                 handling_v = .8f;
                 accelration_v = .9f;
                 nitro_v = .8f;
+                fuel = 300;
+                health = 100;
                 break;
         }
         speed_i.fillAmount = speed_v;

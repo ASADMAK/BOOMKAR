@@ -14,7 +14,7 @@ public class unityads : MonoBehaviour {
     // Initialize the Ads service:
     void Start()
     {
-        Advertisement.Initialize(gameId, testMode);
+        Advertisement.Initialize(gameId, true);
         timer = PlayerPrefs.GetInt("timer", 0);
         timer++;
         if(timer<3)

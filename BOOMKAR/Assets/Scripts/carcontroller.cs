@@ -90,8 +90,8 @@ public class carcontroller : MonoBehaviour
     {
         money = PlayerPrefs.GetInt("gold", 0);
         PlayerPrefs.SetInt("gold", 5000);//extra gold for testing;
-        playerhealth.maxValue = 50;
-        fuelmeter.maxValue = 200;
+        playerhealth.maxValue = PlayerPrefs.GetInt("fuel",50);
+        fuelmeter.maxValue = PlayerPrefs.GetInt("health",200);
         isbreaking = false;
         turningleft = false;
         turningright = false;

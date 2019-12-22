@@ -6,10 +6,20 @@ using UnityEngine.UI;
 
 public class load : MonoBehaviour {
 
+    int car;
     public Image loadingbar;
     int n;
     public GameObject loadingscreen;
-
+    public GameObject[] models;
+    public Transform point;
+    public GameObject garage,levels;
+    public void spawn()
+    {
+        garage.SetActive(true);
+        levels.SetActive(false);
+        car= PlayerPrefs.GetInt("Skin", 0);
+        Instantiate(models[car], point.position, point.rotation);
+    }
     public void changelevel( int m)
     {
         n = m;
@@ -18,6 +28,7 @@ public class load : MonoBehaviour {
     }
     IEnumerator LoadSyncOperation()
     {
+        spawn();
         AsyncOperation gamelevel = SceneManager.LoadSceneAsync(n);
         while(gamelevel.progress <1 )
         {

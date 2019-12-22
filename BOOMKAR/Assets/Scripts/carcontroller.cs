@@ -39,6 +39,7 @@ public class carcontroller : MonoBehaviour
     public GameObject finalindicator;
     public GameObject missionfailed, game;
     public GameObject watersplash;
+    public GameObject dropship;
     public Slider fuelmeter;
     public Slider playerhealth;
 
@@ -88,6 +89,8 @@ public class carcontroller : MonoBehaviour
 
     public void Start()
     {
+        Invoke("delayship", 2);
+        engine1.Play();
         money = PlayerPrefs.GetInt("gold", 0);
         PlayerPrefs.SetInt("gold", 5000);//extra gold for testing;
         playerhealth.maxValue = PlayerPrefs.GetInt("fuel",50);
@@ -214,6 +217,7 @@ public class carcontroller : MonoBehaviour
         }
         if (floppycollected == numberoffloppy)
         {
+            dropship.SetActive(true);
             finalindicator.SetActive(true);
             FindObjectOfType<complete>().done();
             gamecomplete();
@@ -399,6 +403,10 @@ public class carcontroller : MonoBehaviour
         money += moneycollected;
         PlayerPrefs.SetInt("gold", money);
         coindouble.Play();
+    }
+    public void delayship()
+    {
+        dropship.SetActive(false);
     }
 }
 

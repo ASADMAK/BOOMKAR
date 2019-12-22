@@ -77,7 +77,7 @@ public class MirrorReflection : MonoBehaviour
         reflectionCamera.transform.position = newpos;
         Vector3 euler = cam.transform.eulerAngles;
         reflectionCamera.transform.eulerAngles = new Vector3(0, euler.y, euler.z);
-        reflectionCamera.Render();
+        //reflectionCamera.Render(); THIS ONE
         reflectionCamera.transform.position = oldpos;
         GL.SetRevertBackfacing(false);
         Material[] materials = rend.sharedMaterials;

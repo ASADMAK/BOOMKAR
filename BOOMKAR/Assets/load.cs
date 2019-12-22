@@ -25,10 +25,11 @@ public class load : MonoBehaviour {
         n = m;
         StartCoroutine(LoadSyncOperation());
         loadingscreen.SetActive(true);
+        spawn();
     }
     IEnumerator LoadSyncOperation()
     {
-        spawn();
+        
         AsyncOperation gamelevel = SceneManager.LoadSceneAsync(n);
         while(gamelevel.progress <1 )
         {

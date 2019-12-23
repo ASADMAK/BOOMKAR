@@ -21,12 +21,11 @@ public class complete : MonoBehaviour {
             if (other.tag == "player")
             {
    
-                cameraa.SetActive(false);
-                player.SetActive(false);
+                cameraa.SetActive(true);
                 ship.SetBool("iscomplete", true);
                 Invoke("completeanim", 5);
-
-               
+                Invoke("playeroff", 2.5f);
+                FindObjectOfType<carcontroller>().playerstationary();
             }
         }
     }
@@ -44,5 +43,9 @@ public class complete : MonoBehaviour {
     public void done()
     {
         levelcomplete = true;
+    }
+    public void playeroff()
+    {
+        player.SetActive(false);
     }
 }

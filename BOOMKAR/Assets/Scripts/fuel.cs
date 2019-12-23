@@ -5,7 +5,6 @@ using UnityEngine;
 public class fuel : MonoBehaviour {
 
     public GameObject fuelprefab;
-    public GameObject indicator;
     public int time;
     GameObject fuelspawn;
 	// Use this for initialization
@@ -21,17 +20,14 @@ public class fuel : MonoBehaviour {
     {
         if(other.tag== "player")
         {
-            Debug.Log("refuel");
             FindObjectOfType<carcontroller>().refill_Fuel();
             destoyit();
-            indicator.SetActive(false);
             Invoke("spawn", time);
         }
     }
     public void spawn()
     {
         fuelspawn = Instantiate(fuelprefab, transform);
-        indicator.SetActive(true);
     }
     public void destoyit()
     {

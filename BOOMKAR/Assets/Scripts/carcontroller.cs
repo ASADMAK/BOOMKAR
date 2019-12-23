@@ -349,6 +349,17 @@ public class carcontroller : MonoBehaviour
             coinsound.Play();
         }
     }
+
+    public void doubleincreasegold()
+    {
+        money+=10;
+        moneycollected+=10;
+        PlayerPrefs.SetInt("gold", money);
+        if (!coinsound.isPlaying)
+        {
+            coinsound.Play();
+        }
+    }
     public void gamepaused()
     {
         Time.timeScale = 0;
@@ -407,6 +418,10 @@ public class carcontroller : MonoBehaviour
     public void delayship()
     {
         dropship.SetActive(false);
+    }
+    public void playerstationary()
+    {
+        rb.velocity = new Vector3(0,0,0);
     }
 }
 

@@ -217,10 +217,10 @@ public class carcontroller : MonoBehaviour
         }
         if (floppycollected == numberoffloppy)
         {
-            dropship.SetActive(true);
             finalindicator.SetActive(true);
             FindObjectOfType<complete>().done();
             gamecomplete();
+            dropship.SetActive(true);
         }
         if (isacid == true)
         {
@@ -233,6 +233,7 @@ public class carcontroller : MonoBehaviour
         }
         else if(isacid==false)
         {
+            water.Stop();
             playerhealth.value += Time.deltaTime;
             if (playerhealth.value >= 50)
             {
@@ -336,7 +337,6 @@ public class carcontroller : MonoBehaviour
     {
         isacid = false;
         watersplash.SetActive(false);
-        water.Stop();
         onlyonce = false;
     }
     public void increasegold()

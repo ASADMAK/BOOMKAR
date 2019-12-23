@@ -19,8 +19,7 @@ public class shop : MonoBehaviour
     int cost, selectedcharacter;
     bool sold;
     GameObject spawnned;
-    public GameObject garage;
-    public int health, fuel;
+    int health, fuel;
 
     public void Start()
     {   
@@ -128,7 +127,6 @@ public class shop : MonoBehaviour
             PlayerPrefs.SetInt("Skin", selectedcharacter);
             vehcial.SetActive(false);
             menu.SetActive(true);
-            garage.SetActive(false);
             PlayerPrefs.SetInt("fuel", fuel);
             PlayerPrefs.SetInt("health", health);
             

@@ -5,32 +5,35 @@ using UnityEngine;
 public class fuel : MonoBehaviour {
 
     public GameObject fuelprefab;
-    public int time;
+    float time;
     GameObject fuelspawn;
+    bool spawnit = false;
+
 	// Use this for initialization
 	void Start () {
+        time = 0;
         spawn();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag== "player")
+        time += Time.deltaTime;
+        Debug.Log(time);
+        if(spawnit==true && time>15)
         {
-            FindObjectOfType<carcontroller>().refill_Fuel();
-            destoyit();
-            Invoke("spawn", time);
+            spawn();
+            time = 0;
         }
-    }
+	}
+
     public void spawn()
     {
         fuelspawn = Instantiate(fuelprefab, transform);
+        spawnit = false;
     }
-    public void destoyit()
+
+    public void startspawning()
     {
-        Destroy(fuelspawn);
+        spawnit = true;
     }
 }

@@ -8,7 +8,7 @@ public class coincollect : MonoBehaviour {
     {
         if (other.tag == "player")
         {
-            Debug.Log("coin collected");
+
             FindObjectOfType<carcontroller>().increasegold();
             Destroy(gameObject);
         }

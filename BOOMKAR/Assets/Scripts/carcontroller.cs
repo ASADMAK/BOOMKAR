@@ -39,7 +39,6 @@ public class carcontroller : MonoBehaviour
     public GameObject finalindicator;
     public GameObject missionfailed, game;
     public GameObject watersplash;
-    public GameObject dropship;
     public Slider fuelmeter;
     public Slider playerhealth;
 
@@ -102,6 +101,7 @@ public class carcontroller : MonoBehaviour
         rb.centerOfMass = new Vector3(0, -1f, .05f);
         maxfloopy.text = numberoffloppy.ToString();
         vibrate = PlayerPrefs.GetInt("vibration", 1);
+        Invoke("audioengine", 1);
         
     }
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
@@ -220,7 +220,6 @@ public class carcontroller : MonoBehaviour
             finalindicator.SetActive(true);
             FindObjectOfType<complete>().done();
             gamecomplete();
-            dropship.SetActive(true);
         }
         if (isacid == true)
         {
@@ -415,13 +414,13 @@ public class carcontroller : MonoBehaviour
         PlayerPrefs.SetInt("gold", money);
         coindouble.Play();
     }
-    public void delayship()
-    {
-        dropship.SetActive(false);
-    }
     public void playerstationary()
     {
         rb.velocity = new Vector3(0,0,0);
+    }
+    public void audioengine()
+    {
+        engine1.volume = 1;
     }
 }
 

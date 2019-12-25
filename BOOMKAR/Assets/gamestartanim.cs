@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class gamestartanim : MonoBehaviour {
 
-    public GameObject player,cameraa,dropship;
+    public GameObject player,dropship;
     int highestlevel, currentlevel;
+    public Animator anim;
+    public Camera playercam;
 
 	// Use this for initialization
 	void Start () {
@@ -18,8 +20,7 @@ public class gamestartanim : MonoBehaviour {
         }
 
         Invoke("activee", 2.5f);
-        Invoke("delay", 4);
-
+        Invoke("delay", 3);
 	}
 	
 	// Update is called once per frame
@@ -33,7 +34,11 @@ public class gamestartanim : MonoBehaviour {
     }
     public void delay()
     {
-        //GameObject.Find("Camera").GetComponent<VehicleCameraControl>().enabled = true;
+        anim.SetTrigger("gamestart");
+    }
+    public void cameraon()
+    {
+        playercam.depth = 2;
         dropship.SetActive(false);
     }
 

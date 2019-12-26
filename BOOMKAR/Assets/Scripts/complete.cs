@@ -5,10 +5,10 @@ using UnityEngine;
 public class complete : MonoBehaviour {
 
     bool levelcomplete;
-    public GameObject missioncomplete,game;
+    public GameObject missioncomplete,game,dropship;
     public AudioSource levelcompleted;
-    public Animator ship;
     public GameObject cameraa,player;
+    public Animator drop;
 
 	// Use this for initialization
 	void Start () {
@@ -22,9 +22,10 @@ public class complete : MonoBehaviour {
             {
    
                 cameraa.SetActive(true);
-                ship.SetBool("iscomplete", true);
-                Invoke("completeanim", 5);
-                Invoke("playeroff", 2.5f);
+                dropship.SetActive(true);
+                drop.SetTrigger("level");
+                Invoke("completeanim", 8);
+                Invoke("playeroff", 5.5f);
                 FindObjectOfType<carcontroller>().playerstationary();
             }
         }

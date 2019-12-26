@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class gamestartanim : MonoBehaviour {
 
     public GameObject PlayerCamera;
-    public GameObject player,dropship,dropcam,levelcam;
+    public GameObject player,dropship,dropcam,levelcam,carcontrol;
     int highestlevel, currentlevel;
     public Animator anim;
     public Camera playercam;
@@ -34,6 +34,7 @@ public class gamestartanim : MonoBehaviour {
     {
         player.SetActive(true);
         dropcam.SetActive(false);
+        carcontrol.SetActive(true);
     }
     public void delay()
     {

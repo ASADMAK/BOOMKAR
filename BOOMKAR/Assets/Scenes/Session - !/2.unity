@@ -20905,6 +20905,7 @@ MonoBehaviour:
   player: {fileID: 1809039503}
   dropship: {fileID: 1053727202}
   dropcam: {fileID: 208954683}
+  levelcam: {fileID: 539311672}
   anim: {fileID: 539311676}
   playercam: {fileID: 1833671535}
 --- !u!1 &546667508
@@ -23875,6 +23876,11 @@ Prefab:
     - target: {fileID: 4027531202334338, guid: f2d5aaa1009328940b908e935559ddb9, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114134160703919212, guid: f2d5aaa1009328940b908e935559ddb9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2d5aaa1009328940b908e935559ddb9, type: 2}
@@ -50864,6 +50870,10 @@ Prefab:
         type: 2}
       propertyPath: m_OcclusionCulling
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260120855068384, guid: ef9800723ef56b747b7f6dbe17b83ee8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 95297778144713148, guid: ef9800723ef56b747b7f6dbe17b83ee8, type: 2}

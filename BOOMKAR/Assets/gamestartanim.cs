@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class gamestartanim : MonoBehaviour {
 
-    public GameObject player,dropship,dropcam;
+    public GameObject player,dropship,dropcam,levelcam;
     int highestlevel, currentlevel;
     public Animator anim;
     public Camera playercam;
@@ -41,6 +41,7 @@ public class gamestartanim : MonoBehaviour {
     {
         playercam.depth = 2;
         dropship.SetActive(false);
+        levelcam.SetActive(false);
     }
 
 }

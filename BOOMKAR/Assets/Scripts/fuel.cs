@@ -18,7 +18,6 @@ public class fuel : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         time += Time.deltaTime;
-        Debug.Log(time);
         if(spawnit==true && time>15)
         {
             spawn();

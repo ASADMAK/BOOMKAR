@@ -88,7 +88,6 @@ public class carcontroller : MonoBehaviour
 
     public void Start()
     {
-        Invoke("delayship", 2);
         engine1.Play();
         money = PlayerPrefs.GetInt("gold", 0);
         PlayerPrefs.SetInt("gold", 5000);//extra gold for testing;

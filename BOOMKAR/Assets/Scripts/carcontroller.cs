@@ -42,9 +42,8 @@ public class carcontroller : MonoBehaviour
     public Slider fuelmeter;
     public Slider playerhealth;
 
-    public TextMeshProUGUI minfloopy;
-    public TextMeshProUGUI maxfloopy;
-    public TextMeshProUGUI cointext;
+    public TextMeshProUGUI minfloopy,minfloppyblack;
+    public TextMeshProUGUI cointext,cointextblack;
     public TextMeshProUGUI coincollected1, coincollected2, keys1, keys2;
     public TextMeshProUGUI gascan1, gascan2, coin1, coin2;
 
@@ -93,12 +92,13 @@ public class carcontroller : MonoBehaviour
         PlayerPrefs.SetInt("gold", 5000);//extra gold for testing;
         playerhealth.maxValue = PlayerPrefs.GetInt("fuel",50);
         fuelmeter.maxValue = PlayerPrefs.GetInt("health",200);
+        playerhealth.value = playerhealth.maxValue;
+        fuelmeter.value = fuelmeter.maxValue;
         isbreaking = false;
         turningleft = false;
         turningright = false;
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = new Vector3(0, -1f, .05f);
-        maxfloopy.text = numberoffloppy.ToString();
         vibrate = PlayerPrefs.GetInt("vibration", 1);
         Invoke("audioengine", 1);
         
@@ -193,7 +193,9 @@ public class carcontroller : MonoBehaviour
     {
         
         minfloopy.text = floppycollected.ToString();
+        minfloppyblack.text = floppycollected.ToString();
         cointext.text = money.ToString();
+        cointextblack.text = money.ToString();
         fuelmeter.value -= Time.deltaTime;
         if (fuelmeter.value > 0)
         {
@@ -305,8 +307,6 @@ public class carcontroller : MonoBehaviour
     }
     public void floppycollect()
     {
-        maxfloopy.text = numberoffloppy.ToString();
-        minfloopy.text = floppycollected.ToString();
         floppycollected++;
         if(!keysound.isPlaying)
         {

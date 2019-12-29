@@ -11,21 +11,14 @@ public class load : MonoBehaviour {
     int n;
     public GameObject loadingscreen;
     public GameObject[] models;
-    public Transform point;
-    public GameObject garage,levels;
-    public void spawn()
-    {
-        garage.SetActive(true);
-        levels.SetActive(false);
-        car= PlayerPrefs.GetInt("Skin", 0);
-        Instantiate(models[car], point.position, point.rotation);
-    }
+
+    public GameObject levels;
+
     public void changelevel( int m)
     {
         n = m;
         StartCoroutine(LoadSyncOperation());
         loadingscreen.SetActive(true);
-        spawn();
     }
     IEnumerator LoadSyncOperation()
     {

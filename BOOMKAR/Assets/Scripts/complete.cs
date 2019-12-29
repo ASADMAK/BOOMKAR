@@ -7,8 +7,9 @@ public class complete : MonoBehaviour {
     bool levelcomplete;
     public GameObject missioncomplete,game,dropship;
     public AudioSource levelcompleted;
-    public GameObject cameraa,player;
+    public GameObject player;
     public Animator drop;
+    public Camera dropcam;
 
 	// Use this for initialization
 	void Start () {
@@ -20,12 +21,11 @@ public class complete : MonoBehaviour {
         {
             if (other.tag == "player")
             {
-   
-                cameraa.SetActive(true);
+                dropcam.depth = 2;
                 dropship.SetActive(true);
                 drop.SetTrigger("level");
                 Invoke("completeanim", 8);
-                Invoke("playeroff", 5.5f);
+                Invoke("playeroff", 6);
                 FindObjectOfType<carcontroller>().playerstationary();
             }
         }

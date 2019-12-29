@@ -19,19 +19,73 @@ public class FortuneWheelManager : MonoBehaviour
     private int firsttime;
     public ParticleSystem coineffect;
     public Animator rewardplay;
-    public GameObject timeleftwindow;
+    public GameObject timeleftwindow,spinwindow;
     private int money;
+    private bool videoplay;
 
     public void Start()
     {
         money= PlayerPrefs.GetInt("gold", 0);
+        videoplay = false;
     }
     public void TurnWheel ()
     {
-      //  PlayerPrefs.DeleteAll();
-        firsttime = PlayerPrefs.GetInt("first", 0);
-        //PlayerPrefs.DeleteAll();
-        if (firsttime==0)
+        if (videoplay == false)
+        {
+            //  PlayerPrefs.DeleteAll();
+            firsttime = PlayerPrefs.GetInt("first", 0);
+            //PlayerPrefs.DeleteAll();
+            if (firsttime == 0)
+            {
+                _currentLerpRotationTime = 0f;
+
+                // Fill the necessary angles (for example if you want to have 12 sectors you need to fill the angles with 30 degrees step)
+                _sectorsAngles = new float[] { 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360 };
+
+                int fullCircles = 5;
+                float randomFinalAngle = _sectorsAngles[UnityEngine.Random.Range(0, _sectorsAngles.Length)];
+
+                // Here we set up how many circles our wheel should rotate before stop
+                _finalAngle = -(fullCircles * 360 + randomFinalAngle);
+                _isStarted = true;
+
+
+                // Show wasted coins
+                CoinsDeltaText.gameObject.SetActive(true);
+            }
+            else
+            {
+                var unlockDate = DateTime.Parse(PlayerPrefs.GetString("timer"));
+                if (unlockDate < DateTime.Now)
+                {
+                    _currentLerpRotationTime = 0f;
+
+                    // Fill the necessary angles (for example if you want to have 12 sectors you need to fill the angles with 30 degrees step)
+                    _sectorsAngles = new float[] { 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360 };
+
+                    int fullCircles = 5;
+                    float randomFinalAngle = _sectorsAngles[UnityEngine.Random.Range(0, _sectorsAngles.Length)];
+
+                    // Here we set up how many circles our wheel should rotate before stop
+                    _finalAngle = -(fullCircles * 360 + randomFinalAngle);
+                    _isStarted = true;
+
+
+                    // Show wasted coins
+                    CoinsDeltaText.gameObject.SetActive(true);
+
+                }
+                else
+                {
+                    timeleftwindow.SetActive(true);
+                    TimeSpan diff = unlockDate.Subtract(DateTime.Now);
+                    howmuchtimleft.text = " spin locked for " + diff.Hours + " hours and " + diff.Minutes + " more minutes ";
+                    spinwindow.SetActive(false);
+                }
+
+            }
+        }
+        else if(videoplay==true)
         {
             _currentLerpRotationTime = 0f;
 
@@ -49,36 +103,7 @@ public class FortuneWheelManager : MonoBehaviour
             // Show wasted coins
             CoinsDeltaText.gameObject.SetActive(true);
         }
-        else
-        {
-            var unlockDate = DateTime.Parse(PlayerPrefs.GetString("timer"));
-            if (unlockDate < DateTime.Now)
-            {
-                _currentLerpRotationTime = 0f;
 
-                // Fill the necessary angles (for example if you want to have 12 sectors you need to fill the angles with 30 degrees step)
-                _sectorsAngles = new float[] { 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360 };
-
-                int fullCircles = 5;
-                float randomFinalAngle = _sectorsAngles[UnityEngine.Random.Range(0, _sectorsAngles.Length)];
-
-                // Here we set up how many circles our wheel should rotate before stop
-                _finalAngle = -(fullCircles * 360 + randomFinalAngle);
-                _isStarted = true;
-
-
-                // Show wasted coins
-                CoinsDeltaText.gameObject.SetActive(true);
-
-            }
-            else
-            {
-                timeleftwindow.SetActive(true);
-                TimeSpan diff = unlockDate.Subtract(DateTime.Now);
-                howmuchtimleft.text = " spin locked for " + diff.Hours + " hours and " + diff.Minutes + " more minutes ";
-            }
-
-        }
 
 
 
@@ -176,6 +201,13 @@ public class FortuneWheelManager : MonoBehaviour
         rewardplay.SetBool("reward", false);
     }
 
+    public void rewarededvideo()
+    {
+        spinwindow.SetActive(true);
+        timeleftwindow.SetActive(false);
+        videoplay = true;
+        TurnWheel();
+    }
 
 
    

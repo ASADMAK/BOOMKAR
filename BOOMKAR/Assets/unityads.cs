@@ -101,34 +101,6 @@ public class unityads : MonoBehaviour {
         }
     }
 
-    public void ShowRewardedAd_Spin()
-    {
-        if (Advertisement.IsReady("rewardedVideo"))
-        {
-            var options = new ShowOptions { resultCallback = HandleShowResultspin };
-            Advertisement.Show("rewardedVideo", options);
-        }
-    }
-
-    private void HandleShowResultspin(ShowResult result)
-    {
-        switch (result)
-        {
-            case ShowResult.Finished:
-                playerspin();
-                break;
-            case ShowResult.Skipped:
-                Debug.Log("The ad was skipped before reaching the end.");
-                break;
-            case ShowResult.Failed:
-                Debug.LogError("The ad failed to be shown.");
-                break;
-        }
-    }
-
-    public void playerspin()
-    {
-        FindObjectOfType<FortuneWheelManager>().rewarededvideo();
-    }
+   
 
 }

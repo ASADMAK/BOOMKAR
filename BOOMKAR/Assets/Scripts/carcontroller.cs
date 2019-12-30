@@ -87,6 +87,10 @@ public class carcontroller : MonoBehaviour
 
     public void Start()
     {
+        if(SceneManager.GetActiveScene().buildIndex==2)
+        {
+            FindObjectOfType<tutorial>().starttutorial();
+        }
         engine1.Play();
         money = PlayerPrefs.GetInt("gold", 0);
         PlayerPrefs.SetInt("gold", 5000);//extra gold for testing;
@@ -216,11 +220,15 @@ public class carcontroller : MonoBehaviour
         {
             gameover();
         }
-        if (floppycollected == numberoffloppy)
+        if (floppycollected >= numberoffloppy)
         {
             finalindicator.SetActive(true);
             FindObjectOfType<complete>().done();
             gamecomplete();
+            if (SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                FindObjectOfType<tutorial>().tutorial6active();
+            }
         }
         if (isacid == true)
         {
@@ -329,13 +337,21 @@ public class carcontroller : MonoBehaviour
             splash_audio.Play();
             onlyonce = true;
         }
-       
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            FindObjectOfType<tutorial>().tutorial4active();
+        }
+
     }
     public void acidout()
     {
         isacid = false;
         watersplash.SetActive(false);
         onlyonce = false;
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            FindObjectOfType<tutorial>().tutorial5active();
+        }
     }
     public void increasegold()
     {

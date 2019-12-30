@@ -14,8 +14,8 @@ public class shop : MonoBehaviour
     public Transform point;
     float speed_v,accelration_v,handling_v,nitro_v;
     public Image speed_i,acceleration_i,handling_i,nitro_i;
-    public TextMeshProUGUI  buytext;
-    public TextMeshProUGUI costs;
+    public TextMeshProUGUI  buytext,buytext2;
+    public TextMeshProUGUI costs, costs2;
     int cost, selectedcharacter;
     bool sold;
     GameObject spawnned;
@@ -186,7 +186,8 @@ public class shop : MonoBehaviour
         switch(selectedcharacter)
         {
             case 0:
-                buytext.text = "select";
+                buytext.text = "SELECT";
+                buytext2.text = "SELECT";
                 speed_v = .6f;
                 handling_v = .5f;
                 accelration_v = .5f;
@@ -198,12 +199,16 @@ public class shop : MonoBehaviour
                 if (PlayerPrefs.GetInt("Sold1", 0) > 1)
                 {
                     costs.text = "";
+                    costs2.text = "";
                     buytext.text = "SELECT";
+                    buytext2.text = "SELECT";
                 }
                 else
                 {
                     costs.text = "cost : 200";
+                    costs2.text = "cost : 200";
                     buytext.text = "buy";
+                    buytext2.text = "buy";
                 }
                 cost = 200;
                 speed_v = .7f;
@@ -218,12 +223,16 @@ public class shop : MonoBehaviour
                 if (PlayerPrefs.GetInt("Sold2", 0) > 1)
                 {
                     costs.text = "";
+                    costs2.text = "";
                     buytext.text = "SELECT";
+                    buytext2.text = "SELECT";
                 }
                 else
                 {
                     costs.text = "cost : 500";
+                    costs2.text = "cost : 500";
                     buytext.text = "buy";
+                    buytext2.text = "buy";
                 }
                 cost = 500;
                 speed_v = .8f;
@@ -238,12 +247,16 @@ public class shop : MonoBehaviour
                 if (PlayerPrefs.GetInt("Sold3", 0) > 1)
                 {
                     costs.text = "";
+                    costs2.text = "";
                     buytext.text = "SELECT";
+                    buytext2.text = "SELECT";
                 }
                 else
                 {
                     costs.text = "cost : 1000";
+                    costs2.text = "cost : 1000";
                     buytext.text = "buy";
+                    buytext2.text = "buy";
                 }
                 cost = 1000;
                 speed_v = .6f;
@@ -258,12 +271,16 @@ public class shop : MonoBehaviour
                 if (PlayerPrefs.GetInt("Sold4", 0) > 1)
                 {
                     costs.text = "";
+                    costs2.text = "";
                     buytext.text = "SELECT";
+                    buytext2.text = "SELECT";
                 }
                 else
                 {
                     costs.text = "cost : 1500";
+                    costs2.text = "cost : 1500";
                     buytext.text = "buy";
+                    buytext2.text = "buy";
                 }
                 cost = 1500;
                 speed_v = .8f;

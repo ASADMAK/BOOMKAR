@@ -28,11 +28,20 @@ public class gamemanagar : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
+
+    public void menu()
+    {
+        int m=PlayerPrefs.GetInt("firstone", 0);
+        if(m==0)
+        {
+            SceneManager.LoadScene(2);
+            PlayerPrefs.SetInt("firstone", 2);
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
 	// Update is called once per frame
 	void Update () {
 		

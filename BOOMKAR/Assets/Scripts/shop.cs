@@ -19,7 +19,7 @@ public class shop : MonoBehaviour
     int cost, selectedcharacter;
     bool sold;
     GameObject spawnned;
-    int health, fuel;
+    float health, fuel,speed;
 
     public void Start()
     {   
@@ -81,6 +81,17 @@ public class shop : MonoBehaviour
             sold = true;
         }
     }
+    public void character5()
+    {
+        if (PlayerPrefs.GetInt("Sold5", 0) < 1)
+        {
+            sold = false;
+        }
+        else
+        {
+            sold = true;
+        }
+    }
 
     public void buybutton()
     {
@@ -100,6 +111,9 @@ public class shop : MonoBehaviour
                 break;
             case 4:
                 character4();
+                break;
+            case 5:
+                character5();
                 break;
         }
         if (sold == false)
@@ -124,11 +138,11 @@ public class shop : MonoBehaviour
             PlayerPrefs.SetFloat("acceleration", accelration_v);
             PlayerPrefs.SetFloat("handling", handling_v);
             PlayerPrefs.SetFloat("nitro", nitro_v);
-            PlayerPrefs.SetInt("Skin", selectedcharacter);
             vehcial.SetActive(false);
             menu.SetActive(true);
-            PlayerPrefs.SetInt("fuel", fuel);
-            PlayerPrefs.SetInt("health", health);
+            PlayerPrefs.SetFloat("fuel", fuel);
+            PlayerPrefs.SetFloat("health", health);
+            PlayerPrefs.SetFloat("highestspeed", speed);
             
         }
 
@@ -149,19 +163,25 @@ public class shop : MonoBehaviour
             case 4:
                 PlayerPrefs.SetInt("Sold4", 2);
                 break;
+            case 5:
+                PlayerPrefs.SetInt("Sold5", 2);
+                break;
         }
         PlayerPrefs.SetInt("Skin", selectedcharacter);
         PlayerPrefs.SetFloat("speed", speed_v);
         PlayerPrefs.SetFloat("acceleration", accelration_v);
         PlayerPrefs.SetFloat("handling", handling_v);
         PlayerPrefs.SetFloat("nitro", nitro_v);
+        PlayerPrefs.SetFloat("fuel", fuel);
+        PlayerPrefs.SetFloat("health", health);
+        PlayerPrefs.SetFloat("highestspeed", speed);
     }
     public void left()
     {
         selectedcharacter -= 1;
         if (selectedcharacter<0)
         {
-            selectedcharacter = 4;
+            selectedcharacter = 5;
         }
         Destroy(spawnned);
         onoff();
@@ -169,7 +189,7 @@ public class shop : MonoBehaviour
     public void right()
     {
         selectedcharacter += 1;
-        if (selectedcharacter > 4)
+        if (selectedcharacter > 5)
         {
             selectedcharacter = 0;
         }
@@ -188,39 +208,18 @@ public class shop : MonoBehaviour
             case 0:
                 buytext.text = "SELECT";
                 buytext2.text = "SELECT";
+                costs.text = "";
+                costs2.text = "";
                 speed_v = .6f;
                 handling_v = .5f;
                 accelration_v = .5f;
                 nitro_v = .4f;
                 fuel = 200;
                 health = 50;
+                speed = 20;
                 break;
             case 1:
                 if (PlayerPrefs.GetInt("Sold1", 0) > 1)
-                {
-                    costs.text = "";
-                    costs2.text = "";
-                    buytext.text = "SELECT";
-                    buytext2.text = "SELECT";
-                }
-                else
-                {
-                    costs.text = "cost : 200";
-                    costs2.text = "cost : 200";
-                    buytext.text = "buy";
-                    buytext2.text = "buy";
-                }
-                cost = 200;
-                speed_v = .7f;
-                handling_v = .5f;
-                accelration_v = .6f;
-                nitro_v = .6f;
-                fuel = 210;
-                health = 60;
-                break;
-            case 2:
-
-                if (PlayerPrefs.GetInt("Sold2", 0) > 1)
                 {
                     costs.text = "";
                     costs2.text = "";
@@ -235,16 +234,17 @@ public class shop : MonoBehaviour
                     buytext2.text = "buy";
                 }
                 cost = 500;
-                speed_v = .8f;
+                speed_v = .7f;
                 handling_v = .5f;
-                accelration_v = .5f;
-                nitro_v = .8f;
-                fuel = 230;
-                health = 70;
+                accelration_v = .6f;
+                nitro_v = .6f;
+                fuel = 200;
+                health = 50;
+                speed = 30;
                 break;
-            case 3:
+            case 2:
 
-                if (PlayerPrefs.GetInt("Sold3", 0) > 1)
+                if (PlayerPrefs.GetInt("Sold2", 0) > 1)
                 {
                     costs.text = "";
                     costs2.text = "";
@@ -260,11 +260,37 @@ public class shop : MonoBehaviour
                 }
                 cost = 1000;
                 speed_v = .6f;
+                handling_v = .8f;
+                accelration_v = .5f;
+                nitro_v = .8f;
+                fuel = 250;
+                health = 100;
+                speed = 25;
+                break;
+            case 3:
+
+                if (PlayerPrefs.GetInt("Sold3", 0) > 1)
+                {
+                    costs.text = "";
+                    costs2.text = "";
+                    buytext.text = "SELECT";
+                    buytext2.text = "SELECT";
+                }
+                else
+                {
+                    costs.text = "cost : 1500";
+                    costs2.text = "cost : 1500";
+                    buytext.text = "buy";
+                    buytext2.text = "buy";
+                }
+                cost = 1500;
+                speed_v = .7f;
                 handling_v = .7f;
                 accelration_v = .8f;
                 nitro_v = .7f;
                 fuel = 250;
-                health = 80;
+                health = 100;
+                speed = 30;
                 break;
             case 4:
 
@@ -283,12 +309,39 @@ public class shop : MonoBehaviour
                     buytext2.text = "buy";
                 }
                 cost = 1500;
-                speed_v = .8f;
+                speed_v = .9f;
                 handling_v = .8f;
                 accelration_v = .9f;
                 nitro_v = .8f;
                 fuel = 300;
-                health = 100;
+                health = 150;
+                speed = 40;
+                break;
+
+            case 5:
+
+                if (PlayerPrefs.GetInt("Sold5", 0) > 1)
+                {
+                    costs.text = "";
+                    costs2.text = "";
+                    buytext.text = "SELECT";
+                    buytext2.text = "SELECT";
+                }
+                else
+                {
+                    costs.text = "cost : 2500";
+                    costs2.text = "cost : 2500";
+                    buytext.text = "buy";
+                    buytext2.text = "buy";
+                }
+                cost = 2500;
+                speed_v = .8f;
+                handling_v = .9f;
+                accelration_v = .9f;
+                nitro_v = .9f;
+                fuel = 400;
+                health = 200;
+                speed = 40;
                 break;
         }
         speed_i.fillAmount = speed_v;

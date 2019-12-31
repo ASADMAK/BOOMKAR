@@ -25,7 +25,7 @@ public class carcontroller : MonoBehaviour
     public float maxSteeringAngle;
     public float minsteeringAngle;
     public float maxBreakTorque;
-    public float heighestspeed;
+    private float heighestspeed;
     private float speedfactor, currentsteer;
 
     private bool turningleft;
@@ -94,10 +94,10 @@ public class carcontroller : MonoBehaviour
         engine1.Play();
         money = PlayerPrefs.GetInt("gold", 0);
         PlayerPrefs.SetInt("gold", 5000);//extra gold for testing;
-        playerhealth.maxValue = PlayerPrefs.GetInt("fuel",50);
-        fuelmeter.maxValue = PlayerPrefs.GetInt("health",200);
-        playerhealth.value = playerhealth.maxValue;
-        fuelmeter.value = fuelmeter.maxValue;
+        playerhealth.maxValue = PlayerPrefs.GetFloat("health", 50);
+        fuelmeter.maxValue = PlayerPrefs.GetFloat("fuel", 200);
+        playerhealth.value = PlayerPrefs.GetFloat("health", 50);
+        fuelmeter.value = PlayerPrefs.GetFloat("fuel", 200);
         isbreaking = false;
         turningleft = false;
         turningright = false;
@@ -105,6 +105,11 @@ public class carcontroller : MonoBehaviour
         rb.centerOfMass = new Vector3(0, -1f, .05f);
         vibrate = PlayerPrefs.GetInt("vibration", 1);
         Invoke("audioengine", 1);
+        playaudio();
+        heighestspeed = PlayerPrefs.GetFloat("highestspeed", 20);
+        Debug.Log(heighestspeed);
+        Debug.Log(PlayerPrefs.GetFloat("fuel", 200));
+        Debug.Log(PlayerPrefs.GetFloat("health", 50));
         
     }
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
@@ -243,10 +248,10 @@ public class carcontroller : MonoBehaviour
         {
             water.Stop();
             playerhealth.value += Time.deltaTime;
-            if (playerhealth.value >= 50)
+            if (playerhealth.value >= PlayerPrefs.GetFloat("health", 50))
             {
 
-                playerhealth.value = 50;
+                playerhealth.value = PlayerPrefs.GetFloat("health", 50);
             }
         }
         if(fuelmeter.value<50)
@@ -420,8 +425,8 @@ public class carcontroller : MonoBehaviour
     {
         game.SetActive(true);
         missionfailed.SetActive(false);
-        playerhealth.value = 50;
-        fuelmeter.value = 200;
+        playerhealth.value = PlayerPrefs.GetFloat("health", 50);
+        fuelmeter.value = PlayerPrefs.GetFloat("fuel", 200);
     }
     public void doublecoin()
     {

@@ -8,17 +8,17 @@ public class load : MonoBehaviour {
 
     int car;
     public Image loadingbar;
-    int n;
     public GameObject loadingscreen;
-    public GameObject[] models;
-
-    public GameObject levels;
+    public GameObject levels,top;
+    int n;
 
     public void changelevel( int m)
     {
         n = m;
         StartCoroutine(LoadSyncOperation());
         loadingscreen.SetActive(true);
+        levels.SetActive(false);
+        top.SetActive(false);
     }
     IEnumerator LoadSyncOperation()
     {

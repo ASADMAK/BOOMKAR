@@ -16,7 +16,6 @@ public class levelon : MonoBehaviour {
 	void Start () {
      highestlevel=   PlayerPrefs.GetInt("levelreached", 2);
         highestlevel -= 1;
-        Debug.Log(highestlevel);
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].interactable = false;

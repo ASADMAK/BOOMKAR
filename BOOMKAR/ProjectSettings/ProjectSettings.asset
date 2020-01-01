@@ -245,8 +245,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 1
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: D:/GITHUB/BOOMKAR/BOOMKAR/user.keystore
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/Users/shave/Documents/GitHub/BOOMKAR/BOOMKAR/boomkar.keystore
+  AndroidKeyaliasName: redspace
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
@@ -738,9 +738,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 869d3f32-7bb2-45f2-a163-0d4cde32f1a4
-  projectName: BOOMKAR
-  organizationId: redcherry
+  cloudProjectId: 25d72ad8-6055-4fe6-a1f9-5559f692788c
+  projectName: BACKCHOODI (5)
+  organizationId: shavez94
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

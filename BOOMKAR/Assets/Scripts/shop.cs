@@ -15,8 +15,8 @@ public class shop : MonoBehaviour
     float speed_v,accelration_v,handling_v,nitro_v;
     public Image speed_i,acceleration_i,handling_i,nitro_i;
     public TextMeshProUGUI  buytext,buytext2;
-    public TextMeshProUGUI costs, costs2,cost3,cost4;
-    int cost, selectedcharacter;
+    public TextMeshProUGUI costs, costs2,cost3,cost4,moneyneed;
+    int cost, selectedcharacter,diff;
     bool sold;
     GameObject spawnned;
     float health, fuel,speed;
@@ -96,6 +96,7 @@ public class shop : MonoBehaviour
 
     public void buybutton()
     {
+      
         switch (selectedcharacter)
         {
             case 0:
@@ -128,7 +129,10 @@ public class shop : MonoBehaviour
               }
              else
             {
+                vehcial.SetActive(false);
                 money_needed.SetActive(true);
+                diff = cost - money;
+                moneyneed.text = diff.ToString() + " More money needed";
             }
                
         }
@@ -350,5 +354,9 @@ public class shop : MonoBehaviour
         handling_i.fillAmount = handling_v;
         nitro_i.fillAmount = nitro_v;
     }
-
+    public void addshown()
+    {
+        vehcial.SetActive(true);
+        money_needed.SetActive(false);
+    }
 }

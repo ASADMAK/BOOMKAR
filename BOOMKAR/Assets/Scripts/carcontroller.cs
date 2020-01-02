@@ -389,6 +389,7 @@ public class carcontroller : MonoBehaviour
     }
     public void gameover()
     {
+        FindObjectOfType<unityads>().showad();
         game.SetActive(false);
         missionfailed.SetActive(true);
         keys1.text = floppycollected.ToString();

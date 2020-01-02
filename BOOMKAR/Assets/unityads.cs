@@ -11,22 +11,22 @@ public class unityads : MonoBehaviour {
     bool testMode = true;
     int timer;
     public ParticleSystem coineffect;
-    // Initialize the Ads service:
-    void Start()
-    {
-        Advertisement.Initialize(gameId, true);
-        timer = PlayerPrefs.GetInt("timer", 0);
-        timer++;
-        if(timer<3)
-        {
-            showad();
-            timer = 0;
-        }
-        PlayerPrefs.SetInt("timer", timer);
-    }
+
     public void showad()
     {
-      //  Advertisement.Show();
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            Advertisement.Initialize(gameId, true);
+            timer = PlayerPrefs.GetInt("timer", 0);
+            timer++;
+            if (timer < 3)
+            {
+                Advertisement.Show();
+                timer = 0;
+            }
+            PlayerPrefs.SetInt("timer", timer);
+        }
+
     }
 
     public void ShowRewardedAd_revive()
@@ -94,6 +94,7 @@ public class unityads : MonoBehaviour {
             money += 100;
             PlayerPrefs.SetInt("gold", money);
             coineffect.Play();
+            FindObjectOfType<shop>().addshown();
         }
         else
         {

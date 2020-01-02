@@ -9,7 +9,7 @@ public class load : MonoBehaviour {
     int car;
     public Image loadingbar;
     public GameObject loadingscreen;
-    public GameObject levels,top;
+    public GameObject levels,top,caranim;
     int n;
 
     public void changelevel( int m)
@@ -19,6 +19,7 @@ public class load : MonoBehaviour {
         loadingscreen.SetActive(true);
         levels.SetActive(false);
         top.SetActive(false);
+        caranim.SetActive(true);
     }
     IEnumerator LoadSyncOperation()
     {

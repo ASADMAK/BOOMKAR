@@ -34,7 +34,7 @@ public class carcontroller : MonoBehaviour
     private bool isaccelrating;
     private bool isacid;
     private bool isreverse;
-    private bool onlyonce = false;
+    private bool onlyonce,onlyonceaudio;
 
     public GameObject finalindicator;
     public GameObject missionfailed, game;
@@ -56,10 +56,11 @@ public class carcontroller : MonoBehaviour
     private int vibrate;
     private int highestlevel;
     private int currentlevel;
+    private int skin;
 
-    public AudioSource engine1;
-    public AudioSource carbreaks1;
-    public AudioSource carcrash1;
+    public AudioSource[] engine1;
+    public AudioSource[] carbreaks1;
+    public AudioSource[] carcrash1;
     public AudioSource gascan;
     public AudioSource coinsound;
     public AudioSource keysound;
@@ -91,7 +92,8 @@ public class carcontroller : MonoBehaviour
         {
             FindObjectOfType<tutorial>().starttutorial();
         }
-        engine1.Play();
+        skin = PlayerPrefs.GetInt("Skin", 0);
+        engine1[skin].Play();
         money = PlayerPrefs.GetInt("gold", 0);
         PlayerPrefs.SetInt("gold", 5000);//extra gold for testing;
         playerhealth.maxValue = PlayerPrefs.GetFloat("health", 50);
@@ -107,10 +109,8 @@ public class carcontroller : MonoBehaviour
         Invoke("audioengine", 1);
         playaudio();
         heighestspeed = PlayerPrefs.GetFloat("highestspeed", 20);
-        Debug.Log(heighestspeed);
-        Debug.Log(PlayerPrefs.GetFloat("fuel", 200));
-        Debug.Log(PlayerPrefs.GetFloat("health", 50));
-        
+        onlyonce = false;
+        onlyonceaudio = false;
     }
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
@@ -298,15 +298,15 @@ public class carcontroller : MonoBehaviour
     public void tirebreak()
     {
         isbreaking = true;
-        if(!carbreaks1.isPlaying)
-        carbreaks1.Play();
+        if(!carbreaks1[skin].isPlaying)
+        carbreaks1[skin].Play();
     }
     public void tirebreakoff()
     {
         isbreaking = false;
         isreverse = false;
         forward = 0;
-        carbreaks1.Stop();
+        carbreaks1[skin].Stop();
     }
     public void booston()
     {
@@ -397,7 +397,11 @@ public class carcontroller : MonoBehaviour
         coincollected2.text = moneycollected.ToString();
         if(!levelfailed.isPlaying)
         {
-            levelfailed.Play();
+            if (onlyonceaudio == false)
+            {
+                levelfailed.Play();
+                onlyonceaudio = true;
+            }
         }
     }
     public void gamecomplete()
@@ -411,14 +415,14 @@ public class carcontroller : MonoBehaviour
     {
         if (speedfactor < .1)
             speedfactor = .1f;
-        engine1.pitch = speedfactor;
+        engine1[skin].pitch = speedfactor;
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag== "buidling")
         {
-            if(!carcrash1.isPlaying)
-            carcrash1.Play();
+            if(!carcrash1[skin].isPlaying)
+            carcrash1[skin].Play();
         }
     }
     public void revived()
@@ -427,6 +431,7 @@ public class carcontroller : MonoBehaviour
         missionfailed.SetActive(false);
         playerhealth.value = PlayerPrefs.GetFloat("health", 50);
         fuelmeter.value = PlayerPrefs.GetFloat("fuel", 200);
+        onlyonceaudio = false;
     }
     public void doublecoin()
     {
@@ -440,7 +445,7 @@ public class carcontroller : MonoBehaviour
     }
     public void audioengine()
     {
-        engine1.volume = 1;
+        engine1[skin].volume = 1;
     }
 }
 

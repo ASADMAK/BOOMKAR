@@ -15,7 +15,7 @@ public class shop : MonoBehaviour
     float speed_v,accelration_v,handling_v,nitro_v;
     public Image speed_i,acceleration_i,handling_i,nitro_i;
     public TextMeshProUGUI  buytext,buytext2;
-    public TextMeshProUGUI costs, costs2;
+    public TextMeshProUGUI costs, costs2,cost3,cost4;
     int cost, selectedcharacter;
     bool sold;
     GameObject spawnned;
@@ -30,7 +30,8 @@ public class shop : MonoBehaviour
     {
         money = PlayerPrefs.GetInt("gold", 0);
         checkcost();
-
+        cost3.text = PlayerPrefs.GetInt("gold", 0).ToString();
+        cost4.text = PlayerPrefs.GetInt("gold", 0).ToString();
     }
     public void maincharacter()
     {
@@ -264,7 +265,7 @@ public class shop : MonoBehaviour
                 accelration_v = .5f;
                 nitro_v = .8f;
                 fuel = 250;
-                health = 100;
+                health = 70;
                 speed = 25;
                 break;
             case 3:
@@ -289,7 +290,7 @@ public class shop : MonoBehaviour
                 accelration_v = .8f;
                 nitro_v = .7f;
                 fuel = 250;
-                health = 100;
+                health = 80;
                 speed = 30;
                 break;
             case 4:
@@ -314,8 +315,8 @@ public class shop : MonoBehaviour
                 accelration_v = .9f;
                 nitro_v = .8f;
                 fuel = 300;
-                health = 150;
-                speed = 40;
+                health = 100;
+                speed = 35;
                 break;
 
             case 5:
@@ -340,8 +341,8 @@ public class shop : MonoBehaviour
                 accelration_v = .9f;
                 nitro_v = .9f;
                 fuel = 400;
-                health = 200;
-                speed = 40;
+                health = 120;
+                speed = 35;
                 break;
         }
         speed_i.fillAmount = speed_v;

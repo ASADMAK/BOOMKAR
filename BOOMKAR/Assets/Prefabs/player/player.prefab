@@ -3068,7 +3068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4002797376530306
 Transform:
   m_ObjectHideFlags: 1
@@ -11500,7 +11500,6 @@ MonoBehaviour:
   maxSteeringAngle: 30
   minsteeringAngle: 30
   maxBreakTorque: 1e+13
-  heighestspeed: 30
   finalindicator: {fileID: 1662215057380234}
   missionfailed: {fileID: 0}
   game: {fileID: 0}
@@ -11508,8 +11507,9 @@ MonoBehaviour:
   fuelmeter: {fileID: 0}
   playerhealth: {fileID: 0}
   minfloopy: {fileID: 0}
-  maxfloopy: {fileID: 0}
+  minfloppyblack: {fileID: 0}
   cointext: {fileID: 0}
+  cointextblack: {fileID: 0}
   coincollected1: {fileID: 0}
   coincollected2: {fileID: 0}
   keys1: {fileID: 0}
@@ -11518,7 +11518,7 @@ MonoBehaviour:
   gascan2: {fileID: 0}
   coin1: {fileID: 0}
   coin2: {fileID: 0}
-  numberoffloppy: 1
+  numberoffloppy: 3
   engine1: {fileID: 0}
   carbreaks1: {fileID: 0}
   carcrash1: {fileID: 0}

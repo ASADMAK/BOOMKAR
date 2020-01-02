@@ -6,6 +6,7 @@ TagManager:
   tags:
   - player
   - Crate
+  - buidling
   layers:
   - Default
   - TransparentFX

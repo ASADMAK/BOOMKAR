@@ -11,6 +11,23 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1348120662299378}
   m_IsPrefabAsset: 1
+--- !u!1 &1108759162249346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4312914875892582}
+  - component: {fileID: 20274538263953558}
+  - component: {fileID: 114099644866579396}
+  m_Layer: 0
+  m_Name: D,P Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1118855094115094
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +199,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1931387935247492
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4672822797869656}
+  - component: {fileID: 20728274299765616}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4011722880081286
 Transform:
   m_ObjectHideFlags: 1
@@ -206,8 +239,22 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4874012283985868}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4312914875892582
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1108759162249346}
+  m_LocalRotation: {x: 0.56223804, y: -0, z: -0.000000029802322, w: 0.8269755}
+  m_LocalPosition: {x: 0, y: 14.26, z: -20.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4672822797869656}
+  m_Father: {fileID: 4874012283985868}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 68.421005, y: 0, z: 0}
 --- !u!4 &4463164463031948
 Transform:
   m_ObjectHideFlags: 1
@@ -247,6 +294,19 @@ Transform:
   m_Father: {fileID: 4984501375581154}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -108.073, y: -150.04, z: 182.126}
+--- !u!4 &4672822797869656
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931387935247492}
+  m_LocalRotation: {x: -0.048236765, y: 0.000000029802319, z: 0.000000014901159, w: 0.998836}
+  m_LocalPosition: {x: -0, y: 7.3, z: -18.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4312914875892582}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -5.53, y: 0, z: 0}
 --- !u!4 &4767001892108022
 Transform:
   m_ObjectHideFlags: 1
@@ -283,6 +343,7 @@ Transform:
   m_LocalPosition: {x: -128.3, y: 55.5, z: -20.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4312914875892582}
   - {fileID: 4133121224200868}
   - {fileID: 4891923774489784}
   - {fileID: 4984501375581154}
@@ -303,7 +364,7 @@ Transform:
   - {fileID: 4011722880081286}
   - {fileID: 4512309437382438}
   m_Father: {fileID: 4874012283985868}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -73.466, y: -21.184002, z: 20.381}
 --- !u!4 &4984501375581154
 Transform:
@@ -319,8 +380,88 @@ Transform:
   - {fileID: 4550134879002556}
   - {fileID: 4767001892108022}
   m_Father: {fileID: 4874012283985868}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -78.803, y: 30.897001, z: -30.414001}
+--- !u!20 &20274538263953558
+Camera:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1108759162249346}
+  m_Enabled: 0
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!20 &20728274299765616
+Camera:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931387935247492}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 2
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!23 &23122523724646512
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -400,6 +541,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114099644866579396
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1108759162249346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa84ad50ee4fd1a428a0643f31a88944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCar: {fileID: 4874012283985868}
+  distance: 10
+  height: 5
+  heightDamping: 2
+  rotationDamping: 3
+  defaultFOV: 60
+  zoomMultiplier: 0.3
 --- !u!198 &198218861856440276
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -48,10 +48,10 @@ public class unityads : MonoBehaviour {
                 revive();
                 break;
             case ShowResult.Skipped:
-                Debug.Log("The ad was skipped before reaching the end.");
+                SSTools.ShowMessage("The ad was skipped", SSTools.Position.bottom, SSTools.Time.oneSecond);
                 break;
             case ShowResult.Failed:
-                Debug.LogError("The ad failed to be shown.");
+                SSTools.ShowMessage("Internet not available", SSTools.Position.bottom, SSTools.Time.oneSecond);
                 break;
         }
     }
@@ -79,10 +79,10 @@ public class unityads : MonoBehaviour {
                 doublecoin();
                 break;
             case ShowResult.Skipped:
-                Debug.Log("The ad was skipped before reaching the end.");
+                SSTools.ShowMessage("The ad was skipped", SSTools.Position.bottom, SSTools.Time.oneSecond);
                 break;
             case ShowResult.Failed:
-                Debug.LogError("The ad failed to be shown.");
+                SSTools.ShowMessage("Internet not available", SSTools.Position.bottom, SSTools.Time.oneSecond);
                 break;
         }
     }

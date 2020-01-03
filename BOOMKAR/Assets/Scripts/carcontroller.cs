@@ -84,6 +84,7 @@ public class carcontroller : MonoBehaviour
         {
             PlayerPrefs.SetInt("hightest", highestlevel+1);
         }
+        Debug.Log(PlayerPrefs.GetInt("hightest"));
     }
 
     public void Start()
@@ -434,6 +435,11 @@ public class carcontroller : MonoBehaviour
                 }
                 onlyoncecrash = true;
             }
+        }
+        else if(other.tag== "floppy")
+        {
+            floppycollect();
+            Destroy(other);
         }
     }
     private void OnTriggerExit(Collider other)

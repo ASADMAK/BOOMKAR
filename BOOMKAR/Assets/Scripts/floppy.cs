@@ -10,8 +10,6 @@ public class floppy : MonoBehaviour {
     {
         if (other.tag == "player")
         {
-            Debug.Log("floopy collected");
-            FindObjectOfType<carcontroller>().floppycollect();
             Destroy(gameObject);
             Destroy(indicator);
 

@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1213468121703336
 GameObject:
   m_ObjectHideFlags: 0
@@ -36,11 +36,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4345695212443332}
-  - component: {fileID: 114821183443483030}
   - component: {fileID: 65373463648437668}
+  - component: {fileID: 114419416999289670}
   m_Layer: 0
   m_Name: Key
-  m_TagString: Untagged
+  m_TagString: floppy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,7 +197,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1213468121703336}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -141.62, y: 3.24, z: -124.95}
+  m_LocalPosition: {x: -98.6, y: 1.01, z: -194}
   m_LocalScale: {x: 1.1999999, y: 1.1999999, z: 1.1999999}
   m_Children:
   - {fileID: 4361268577161822}
@@ -241,13 +241,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1957270741740686}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.65, z: 0}
+  m_LocalRotation: {x: 0.7252535, y: -0, z: -0, w: 0.688482}
+  m_LocalPosition: {x: -0.000006357829, y: 4.79, z: 0.17}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 4345695212443332}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 92.97998, y: -0.000015258789, z: -0.000015258789}
 --- !u!4 &4529829183690612
 Transform:
   m_ObjectHideFlags: 1
@@ -300,13 +300,13 @@ ParticleAnimator:
     rgba: 167772160
   colorAnimation[1]:
     serializedVersion: 2
-    rgba: 3036662629
+    rgba: 3029008229
   colorAnimation[2]:
     serializedVersion: 2
-    rgba: 4292714844
+    rgba: 4286569820
   colorAnimation[3]:
     serializedVersion: 2
-    rgba: 3032385387
+    rgba: 3027222123
   colorAnimation[4]:
     serializedVersion: 2
     rgba: 167772160
@@ -578,9 +578,9 @@ Light:
   m_GameObject: {fileID: 1957270741740686}
   m_Enabled: 1
   serializedVersion: 8
-  m_Type: 2
-  m_Color: {r: 0.41176474, g: 0.882353, b: 1, a: 1}
-  m_Intensity: 3
+  m_Type: 0
+  m_Color: {r: 0, g: 1, b: 0.059999943, a: 1}
+  m_Intensity: 29.42
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Amplitude: 0.05
   m_Speed: 2
   m_UseHorizontalBounce: 0
---- !u!114 &114821183443483030
+--- !u!114 &114419416999289670
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5076,7 +5076,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: c3554569e1dfd9a48a4fec6d8b384aaa, type: 2}
-  - {fileID: 2100000, guid: c3554569e1dfd9a48a4fec6d8b384aaa, type: 2}
+  - {fileID: 2100000, guid: df00f07adb0796141a9211f0b1852b4b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

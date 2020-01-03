@@ -34,7 +34,7 @@ public class carcontroller : MonoBehaviour
     private bool isaccelrating;
     private bool isacid;
     private bool isreverse;
-    private bool onlyonce,onlyonceaudio;
+    private bool onlyonce,onlyonceaudio,onlyoncecrash;
 
     public GameObject finalindicator;
     public GameObject missionfailed, game;
@@ -111,6 +111,7 @@ public class carcontroller : MonoBehaviour
         heighestspeed = PlayerPrefs.GetFloat("highestspeed", 20);
         onlyonce = false;
         onlyonceaudio = false;
+        onlyoncecrash = false;
     }
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
@@ -382,10 +383,12 @@ public class carcontroller : MonoBehaviour
     public void gamepaused()
     {
         Time.timeScale = 0;
+        engine1[skin].Stop();
     }
     public void gameison()
     {
         Time.timeScale = 1;
+        engine1[skin].Play();
     }
     public void gameover()
     {
@@ -422,8 +425,22 @@ public class carcontroller : MonoBehaviour
     {
         if(other.tag== "buidling")
         {
-            if(!carcrash1[skin].isPlaying)
-            carcrash1[skin].Play();
+            if (onlyoncecrash == false)
+            {
+                if (!carcrash1[skin].isPlaying)
+                {
+                    carcrash1[skin].Play();
+                    carcrash1[skin].volume = speedfactor;
+                }
+                onlyoncecrash = true;
+            }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "buidling")
+        {
+            onlyoncecrash = false;
         }
     }
     public void revived()

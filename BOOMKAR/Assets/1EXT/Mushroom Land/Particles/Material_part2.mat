@@ -27,7 +27,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmisColor: {r: 0.2, g: 0.2, b: 0.2, a: 0}
-    - _TintColor: {r: 0.06132078, g: 0.8574121, b: 1, a: 1}
+    - _TintColor: {r: 0.062745094, g: 1, b: 0.1664685, a: 1}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6

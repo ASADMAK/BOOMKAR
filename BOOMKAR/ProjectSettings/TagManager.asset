@@ -8,6 +8,7 @@ TagManager:
   - Crate
   - buidling
   - floppy
+  - water
   layers:
   - Default
   - TransparentFX

@@ -10,9 +10,9 @@ public class floppy : MonoBehaviour {
     {
         if (other.tag == "player")
         {
-            Destroy(gameObject);
+            FindObjectOfType<playercon>().floppycollect();
             Destroy(indicator);
-
+            Destroy(gameObject);
         }
     }
 }

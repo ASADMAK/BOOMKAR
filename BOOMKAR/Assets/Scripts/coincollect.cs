@@ -9,7 +9,7 @@ public class coincollect : MonoBehaviour {
         if (other.tag == "player")
         {
 
-            FindObjectOfType<carcontroller>().increasegold();
+            FindObjectOfType<playercon>().increasegold();
             Destroy(gameObject);
         }
     }

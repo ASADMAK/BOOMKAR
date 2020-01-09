@@ -10,6 +10,7 @@ public class colliderindex : MonoBehaviour {
         if (other.tag == "player")
         {
             FindObjectOfType<tutorial>().tutorial3active();
+            Destroy(gameObject);
         }
     }
 }

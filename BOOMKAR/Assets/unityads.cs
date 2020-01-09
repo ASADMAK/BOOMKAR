@@ -12,6 +12,10 @@ public class unityads : MonoBehaviour {
     int timer;
     public ParticleSystem coineffect;
 
+    public void Start()
+    {
+        Advertisement.Initialize(gameId, testMode);
+    }
     public void showad()
     {
         if (SceneManager.GetActiveScene().buildIndex != 0)
@@ -45,7 +49,7 @@ public class unityads : MonoBehaviour {
             case ShowResult.Finished:
                 Debug.Log("The ad was successfully shown.");
                 Debug.Log("revived");
-                revive();
+                FindObjectOfType<playercon>().revived();
                 break;
             case ShowResult.Skipped:
                 SSTools.ShowMessage("The ad was skipped", SSTools.Position.bottom, SSTools.Time.oneSecond);
@@ -55,10 +59,7 @@ public class unityads : MonoBehaviour {
                 break;
         }
     }
-    public void revive()
-    {
-        FindObjectOfType<carcontroller>().revived();
-    }
+
     // Show an ad:
     public void ShowRewardedAd_coindouble()
     {
@@ -98,7 +99,7 @@ public class unityads : MonoBehaviour {
         }
         else
         {
-            FindObjectOfType<carcontroller>().doublecoin();
+            FindObjectOfType<playercon>().doublecoin();
         }
     }
 

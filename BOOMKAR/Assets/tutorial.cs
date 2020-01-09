@@ -9,9 +9,8 @@ public class tutorial : MonoBehaviour {
     public GameObject tutorail4;
     public GameObject tutorial5;
     public GameObject tutorial6;
-    public GameObject meter1,meter2;
+    public GameObject meter,floppy,coin;
     public GameObject carcontrol;
-    public GameObject finalramp;
 
 	// Use this for initialization
 	void Start () {
@@ -31,9 +30,9 @@ public class tutorial : MonoBehaviour {
     public void tutorial3active()
     {
         tutorial3.SetActive(true);
+        carcontrol.SetActive(false);
         FindObjectOfType<gamemanagar>().gamepause();
-        meter1.SetActive(true);
-        meter2.SetActive(true);
+        meter.SetActive(true);
     }
 
     public void pause()
@@ -47,7 +46,6 @@ public class tutorial : MonoBehaviour {
     }
     public void ontu()
     {
-        FindObjectOfType<gamemanagar>().gamepause();
         tutorail4.SetActive(true);
         carcontrol.SetActive(false);
     }
@@ -58,14 +56,29 @@ public class tutorial : MonoBehaviour {
     public void ont()
     {
         tutorial5.SetActive(true);
-        FindObjectOfType<gamemanagar>().gamepause();
         carcontrol.SetActive(false);
+        floppy.SetActive(false);
+        meter.SetActive(true);
     }
     public void tutorial6active()
     {
         tutorial6.SetActive(true);
         FindObjectOfType<gamemanagar>().gamepause();
         carcontrol.SetActive(false);
-        finalramp.SetActive(true);
+   
+    }
+
+    public void tutorial2()
+    {
+        carcontrol.SetActive(false);
+        floppy.SetActive(true);
+    }
+    public void carcontrolactive()
+    {
+        carcontrol.SetActive(true);
+    }
+    public void floppycactive()
+    {
+        floppy.SetActive(true);
     }
 }

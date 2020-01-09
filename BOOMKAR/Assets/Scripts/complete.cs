@@ -26,7 +26,7 @@ public class complete : MonoBehaviour {
                 drop.SetTrigger("level");
                 Invoke("completeanim", 8);
                 Invoke("playeroff", 6);
-                FindObjectOfType<carcontroller>().playerstationary();
+                FindObjectOfType<playercon>().playerstationary();
             }
         }
     }

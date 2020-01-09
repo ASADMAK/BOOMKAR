@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 4356289487621842}
   - component: {fileID: 114505814701908038}
   m_Layer: 0
-  m_Name: floppy
+  m_Name: floppy3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 4682704284498502}
   - component: {fileID: 114473318731532230}
   m_Layer: 0
-  m_Name: floppy
+  m_Name: floppy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1289,7 +1289,7 @@ GameObject:
   - component: {fileID: 4295933537214626}
   - component: {fileID: 114247056940615864}
   m_Layer: 0
-  m_Name: floppy
+  m_Name: floppy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3094,15 +3094,15 @@ GameObject:
   m_Component:
   - component: {fileID: 4733881911996084}
   - component: {fileID: 54412091270273742}
-  - component: {fileID: 114475274793891716}
   - component: {fileID: 65029058038997800}
+  - component: {fileID: 114484208612729414}
   m_Layer: 0
   m_Name: player
   m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4002797376530306
 Transform:
   m_ObjectHideFlags: 1
@@ -5070,7 +5070,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990852834242948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6330242, y: 4.93, z: -235.28165}
+  m_LocalPosition: {x: -1, y: 3.9, z: -232.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4760490663131220}
@@ -11622,7 +11622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tracking: {fileID: 0}
   center: {fileID: 4733881911996084}
---- !u!114 &114475274793891716
+--- !u!114 &114484208612729414
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11630,7 +11630,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1990852834242948}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 194016c6ffd0d6e43a67dfc7a75a04a8, type: 3}
+  m_Script: {fileID: 11500000, guid: b308b34f53bbff2429026dca7b751fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   axleInfos:
@@ -11645,7 +11645,8 @@ MonoBehaviour:
   maxMotorTorque: 1500
   maxSteeringAngle: 30
   minsteeringAngle: 30
-  maxBreakTorque: 1e+13
+  maxBreakTorque: 9999999
+  heighestspeed: 30
   finalindicator: {fileID: 1662215057380234}
   missionfailed: {fileID: 0}
   game: {fileID: 0}
@@ -11653,39 +11654,13 @@ MonoBehaviour:
   fuelmeter: {fileID: 0}
   playerhealth: {fileID: 0}
   minfloopy: {fileID: 0}
-  minfloppyblack: {fileID: 0}
+  minfloppy2: {fileID: 0}
   cointext: {fileID: 0}
-  cointextblack: {fileID: 0}
-  coincollected1: {fileID: 0}
-  coincollected2: {fileID: 0}
-  keys1: {fileID: 0}
-  keys2: {fileID: 0}
-  gascan1: {fileID: 0}
-  gascan2: {fileID: 0}
-  coin1: {fileID: 0}
-  coin2: {fileID: 0}
+  cointext2: {fileID: 0}
   numberoffloppy: 3
-  engine1:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  carbreaks1:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  carcrash1:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  engine1: {fileID: 0}
+  carbreaks1: {fileID: 0}
+  carcrash1: {fileID: 0}
   gascan: {fileID: 0}
   coinsound: {fileID: 0}
   keysound: {fileID: 0}
@@ -11693,7 +11668,6 @@ MonoBehaviour:
   water: {fileID: 0}
   splash_audio: {fileID: 0}
   splash: {fileID: 198058804404006062}
-  coindouble: {fileID: 0}
   fuelanim: {fileID: 0}
   healthanim: {fileID: 0}
 --- !u!114 &114505814701908038

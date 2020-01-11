@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Card Ramp
   m_Shader: {fileID: 4800000, guid: 98d8a7115cee94176b3193613543855b, type: 3}
-  m_ShaderKeywords: _ALBEDOMAP _EMISSION
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _ALBEDOMAP _EMISSION
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0

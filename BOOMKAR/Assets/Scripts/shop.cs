@@ -19,7 +19,9 @@ public class shop : MonoBehaviour
     int cost, selectedcharacter,diff;
     bool sold;
     GameObject spawnned;
-    float health, fuel,speed;
+    float health, fuel,speed,steer;
+    public TextMeshProUGUI[] amount;
+    public AudioSource brought;
 
     public void Start()
     {   
@@ -126,6 +128,7 @@ public class shop : MonoBehaviour
                     purchasing();
                     PlayerPrefs.SetInt("gold", money);
                     PlayerPrefs.SetInt("Skin", selectedcharacter);
+                    brought.Play();
               }
              else
             {
@@ -148,7 +151,8 @@ public class shop : MonoBehaviour
             PlayerPrefs.SetFloat("fuel", fuel);
             PlayerPrefs.SetFloat("health", health);
             PlayerPrefs.SetFloat("highestspeed", speed);
-            
+            PlayerPrefs.SetFloat("steer", steer);
+
         }
 
     }
@@ -180,6 +184,7 @@ public class shop : MonoBehaviour
         PlayerPrefs.SetFloat("fuel", fuel);
         PlayerPrefs.SetFloat("health", health);
         PlayerPrefs.SetFloat("highestspeed", speed);
+        PlayerPrefs.SetFloat("steer", steer);
     }
     public void left()
     {
@@ -222,6 +227,7 @@ public class shop : MonoBehaviour
                 fuel = 200;
                 health = 50;
                 speed = 20;
+                steer = 30;
                 break;
             case 1:
                 if (PlayerPrefs.GetInt("Sold1", 0) > 1)
@@ -246,6 +252,7 @@ public class shop : MonoBehaviour
                 fuel = 200;
                 health = 50;
                 speed = 30;
+                steer = 35;
                 break;
             case 2:
 
@@ -271,6 +278,7 @@ public class shop : MonoBehaviour
                 fuel = 250;
                 health = 70;
                 speed = 25;
+                steer = 40;
                 break;
             case 3:
 
@@ -296,6 +304,7 @@ public class shop : MonoBehaviour
                 fuel = 250;
                 health = 80;
                 speed = 30;
+                steer = 45;
                 break;
             case 4:
 
@@ -321,6 +330,7 @@ public class shop : MonoBehaviour
                 fuel = 300;
                 health = 100;
                 speed = 35;
+                steer = 50;
                 break;
 
             case 5:
@@ -347,12 +357,17 @@ public class shop : MonoBehaviour
                 fuel = 400;
                 health = 120;
                 speed = 35;
+                steer = 55;
                 break;
         }
         speed_i.fillAmount = speed_v;
         acceleration_i.fillAmount = accelration_v;
         handling_i.fillAmount = handling_v;
         nitro_i.fillAmount = nitro_v;
+        amount[0].text = health.ToString();
+        amount[1].text = speed.ToString();
+        amount[2].text = fuel.ToString();
+        amount[3].text = steer.ToString();
     }
     public void addshown()
     {

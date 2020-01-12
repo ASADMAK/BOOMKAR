@@ -27,6 +27,7 @@ public class complete : MonoBehaviour {
                 Invoke("completeanim", 8);
                 Invoke("playeroff", 6);
                 FindObjectOfType<playercon>().playerstationary();
+                FindObjectOfType<playercon>().textto();
             }
         }
     }

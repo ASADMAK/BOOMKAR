@@ -10,7 +10,6 @@ public class unityads : MonoBehaviour {
     string gameId = "1234567";
     bool testMode = true;
     int timer;
-    public ParticleSystem coineffect;
 
     public void Start()
     {
@@ -94,7 +93,6 @@ public class unityads : MonoBehaviour {
             int money = PlayerPrefs.GetInt("gold", 0);
             money += 100;
             PlayerPrefs.SetInt("gold", money);
-            coineffect.Play();
             FindObjectOfType<shop>().addshown();
         }
         else

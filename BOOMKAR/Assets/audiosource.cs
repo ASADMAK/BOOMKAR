@@ -5,6 +5,7 @@ using UnityEngine;
 public class audiosource : MonoBehaviour {
 
     public AudioSource[] audiosources;
+    public AudioSource backgroundmusic;
     float volume;
 	// Use this for initialization
 	void Start () {
@@ -12,7 +13,15 @@ public class audiosource : MonoBehaviour {
         for (int i = 0; i < audiosources.Length; i++)
         {
             audiosources[i].volume = volume;
-        }  
+        }
+        if(volume==1)
+        {
+            backgroundmusic.volume = .3f;
+        }
+        else
+        {
+            backgroundmusic.volume = 0;
+        }
     }
 	
 	// Update is called once per frame

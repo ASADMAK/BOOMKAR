@@ -241,7 +241,7 @@ public class playercon : MonoBehaviour
         {
             gameover();
         }
-        if (floppycollected > numberoffloppy)
+        if (floppycollected >= numberoffloppy)
         {
             finalindicator.SetActive(true);
             FindObjectOfType<complete>().done();
@@ -329,8 +329,6 @@ public class playercon : MonoBehaviour
     }
     public void floppygot()
     {
-        minfloopy.text = floppycollected.ToString();
-        minfloppy2.text = floppycollected.ToString();
         floppycollected++;
         if(!keysound.isPlaying)
         {
@@ -416,6 +414,8 @@ public class playercon : MonoBehaviour
         if (speedfactor < .1)
             speedfactor = .1f;
         engine[skin].pitch = speedfactor;
+        minfloopy.text = floppycollected.ToString();
+        minfloppy2.text = floppycollected.ToString();
     }
 
     public void doubleincreasegold()

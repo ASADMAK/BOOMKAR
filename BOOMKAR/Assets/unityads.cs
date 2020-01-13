@@ -22,12 +22,13 @@ public class unityads : MonoBehaviour {
             Advertisement.Initialize(gameId, true);
             timer = PlayerPrefs.GetInt("timer", 0);
             timer++;
-            if (timer < 3)
+            if (timer > 3)
             {
                 Advertisement.Show();
                 timer = 0;
             }
             PlayerPrefs.SetInt("timer", timer);
+           
         }
 
     }

@@ -40,6 +40,7 @@ public class playercon : MonoBehaviour
     private bool onlyonceaudio;
     private bool onlyoncecrash;
 
+
     public GameObject finalindicator;
     public GameObject missionfailed, game;
     public GameObject watersplash;
@@ -52,7 +53,7 @@ public class playercon : MonoBehaviour
     public TextMeshProUGUI[] fuelcollected;
     public TextMeshProUGUI[] bookscollected;
 
-    private int floppycollected = 1;
+    private int floppycollected = 0;
     private int moneycollected;
     private int gascanno;
     private int stars = 0;
@@ -326,7 +327,7 @@ public class playercon : MonoBehaviour
         forward = 0;
         isaccelrating = false;
     }
-    public void floppycollect()
+    public void floppygot()
     {
         minfloopy.text = floppycollected.ToString();
         minfloppy2.text = floppycollected.ToString();
@@ -406,6 +407,7 @@ public class playercon : MonoBehaviour
                 onlyonceaudio = true;
             }
         }
+        rb.mass = 100000;
 
     }
 
@@ -469,10 +471,11 @@ public class playercon : MonoBehaviour
         playerhealth.value = PlayerPrefs.GetFloat("health", 50);
         fuelmeter.value = PlayerPrefs.GetFloat("fuel", 200);
         onlyonceaudio = false;
+        rb.mass = 3000;
     }
     public void playerstationary()
     {
-        rb.velocity = new Vector3(0, 0, 0);
+        transform.position = new Vector3(-1, 1.73f, -232.87f);
     }
     public void textto()
     {
@@ -482,7 +485,7 @@ public class playercon : MonoBehaviour
         }
         for (int i = 0; i < fuelcollected.Length; i++)
         {
-            fuelcollected[i].text = gascan.ToString();
+            fuelcollected[i].text = gascanno.ToString();
         }
         for (int i = 0; i < bookscollected.Length; i++)
         {

@@ -10,6 +10,7 @@ public class gamestartanim : MonoBehaviour {
     int highestlevel, currentlevel;
     public Animator anim;
     public Camera playercam,dropcam;
+    public GameObject gamecanvas;
 
 	// Use this for initialization
 	void Start () {
@@ -44,6 +45,7 @@ public class gamestartanim : MonoBehaviour {
     {
         PlayerCamera.SetActive(true);
         levelcam.SetActive(false);
+        gamecanvas.SetActive(true);
     }
 
 }

@@ -14,8 +14,9 @@ public class levelon : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-     highestlevel=   PlayerPrefs.GetInt("levelreached", 2);
-        highestlevel -= 1;
+     highestlevel=   PlayerPrefs.GetInt("hightest", 3);
+        Debug.Log(highestlevel);
+        highestlevel -= 2;
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].interactable = false;
@@ -51,12 +52,11 @@ public class levelon : MonoBehaviour {
         }
         for (int i = 0; i < highestlevel-1; i++)
         {
-            tick[i].SetActive(false);
+            tick[i].SetActive(true);
         }
-        for (int i = 0; i < highestlevel; i++)
-        {
-            newlevel[i].SetActive(true);
-        }
+
+        newlevel[highestlevel-1].SetActive(true);
+        
         for (int i = highestlevel-1; i < locked.Length; i++)
         {
             locked[i].SetActive(true);

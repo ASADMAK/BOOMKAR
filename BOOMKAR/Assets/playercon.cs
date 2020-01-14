@@ -81,8 +81,8 @@ public class playercon : MonoBehaviour
     public void Awake()
     {
         currentlevel = SceneManager.GetActiveScene().buildIndex;
-        highestlevel = PlayerPrefs.GetInt("hightest", 1);
-        if(currentlevel-1>highestlevel)
+        highestlevel = PlayerPrefs.GetInt("hightest", 3);
+        if(currentlevel>highestlevel)
         {
             PlayerPrefs.SetInt("hightest", highestlevel+1);
         }

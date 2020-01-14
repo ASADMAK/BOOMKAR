@@ -160,7 +160,7 @@ PlayerSettings:
   enableFrameTimingStats: 0
   useHDRDisplay: 0
   D3DHDRBitDepth: 0
-  m_ColorGamuts: 00000000
+  m_ColorGamuts: 0300000000000000
   targetPixelDensity: 30
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
@@ -169,7 +169,7 @@ PlayerSettings:
     Android: com.Redspace.Boomkar
   buildNumber: {}
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 21
+  AndroidMinSdkVersion: 24
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 

@@ -16,7 +16,7 @@ PlayerSettings:
   productName: BOOMKAR
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.21711464, g: 0.38679248, b: 0.37321827, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
@@ -169,7 +169,7 @@ PlayerSettings:
     Android: com.Redspace.Boomkar
   buildNumber: {}
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 19
+  AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -636,8 +636,7 @@ PlayerSettings:
   ps4IncludedModules: []
   ps4attribVROutputEnabled: 0
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 3436a2b67284840cb807a01bd340464e,
-    type: 3}
+  splashScreenBackgroundSourceLandscape: {fileID: 0}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   blurSplashScreenBackground: 1
   spritePackerPolicy: 
@@ -754,10 +753,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 25d72ad8-6055-4fe6-a1f9-5559f692788c
+  cloudProjectId: 4e50e289-0f6d-4d84-bf1b-015db5ccf4af
   framebufferDepthMemorylessMode: 0
-  projectName: BACKCHOODI (5)
-  organizationId: shavez94
+  projectName: BOOMKAR (1)
+  organizationId: redcherry
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 public class cameraatest : MonoBehaviour
 {
     public GameObject[] cam;
+    public GameObject playercam;
     int n = 0;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class cameraatest : MonoBehaviour
     }
     public void onit()
     {
+        playercam.SetActive(false);
         for (int i = 0; i < cam.Length; i++)
         {
             cam[i].SetActive(false);
@@ -29,5 +31,9 @@ public class cameraatest : MonoBehaviour
         {
             n = 0;
         }
+    }
+    public void normalcam()
+    {
+        playercam.SetActive(true);
     }
 }

@@ -457,7 +457,7 @@ public class playercon : MonoBehaviour
         fuelmeter.value = PlayerPrefs.GetFloat("fuel", 200);
         onlyonceaudio = false;
         rb.mass = 3000;
-        Time.timeScale = 1;
+        gameison();
     }
     public void playerstationary()
     {

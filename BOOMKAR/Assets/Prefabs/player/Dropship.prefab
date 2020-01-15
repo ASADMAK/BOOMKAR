@@ -19224,9 +19224,8 @@ GameObject:
   - component: {fileID: 4874012283985868}
   - component: {fileID: 33409450659646830}
   - component: {fileID: 23122523724646512}
-  - component: {fileID: 54179648067409480}
   - component: {fileID: 95047577700673340}
-  - component: {fileID: 8168376004994726313}
+  - component: {fileID: 1053727209}
   m_Layer: 0
   m_Name: Dropship
   m_TagString: Untagged
@@ -19305,22 +19304,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &54179648067409480
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348120662299378}
-  serializedVersion: 2
-  m_Mass: 0.001
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!95 &95047577700673340
 Animator:
   serializedVersion: 3
@@ -19340,7 +19323,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8168376004994726313
+--- !u!114 &1053727209
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19349,9 +19332,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1348120662299378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1035f05592e0d0441b072a48e630760c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ec3825e96cc5a2478e812d65ce4f91c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  dropcam: {fileID: 20728274299765616}
+  gamecanvas: {fileID: 0}
+  dropcamera: {fileID: 1931387935247492}
 --- !u!1 &1472608969428146
 GameObject:
   m_ObjectHideFlags: 0
@@ -38393,13 +38380,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931387935247492}
-  m_LocalRotation: {x: 0.52169293, y: 0.000000014901159, z: -0.000000014901159, w: 0.8531334}
-  m_LocalPosition: {x: 0, y: 91.2115, z: -75.245636}
+  m_LocalRotation: {x: 0.29636055, y: -0.009357075, z: 0.04972917, w: 0.9537347}
+  m_LocalPosition: {x: -0.71, y: 36.93, z: -45.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4874012283985868}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -5.53, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 34.488003, y: 0.808, z: 6.2200003}
 --- !u!20 &20728274299765616
 Camera:
   m_ObjectHideFlags: 0
@@ -38425,7 +38412,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 28
   orthographic: 0
   orthographic size: 5
   m_Depth: 2

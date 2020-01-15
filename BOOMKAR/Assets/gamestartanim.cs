@@ -5,26 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class gamestartanim : MonoBehaviour {
 
-    public GameObject PlayerCamera;
-    public GameObject player,dropship,levelcam,carcontrol;
-    int highestlevel, currentlevel;
-    public Animator anim;
-    public Camera playercam,dropcam;
+    public GameObject player;
+    public Camera dropcam;
     public GameObject gamecanvas;
+    public GameObject dropcamera;
 
-	// Use this for initialization
-	void Start () {
-
-        currentlevel = SceneManager.GetActiveScene().buildIndex;
-        if (currentlevel < PlayerPrefs.GetInt("levelreached", 2))
-        {
-            PlayerPrefs.SetInt("levelreached", currentlevel + 1);          
-        }
-
-        Invoke("cameraon", 3.0f);
-        Invoke("activee", 2.0f);
-        Invoke("delay", 6);
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -34,18 +19,24 @@ public class gamestartanim : MonoBehaviour {
     public void activee()
     {
         player.SetActive(true);
-        carcontrol.SetActive(true);
         dropcam.depth = 0;
     }
-    public void delay()
+
+    public void gamecanvason()
     {
-        anim.SetTrigger("gamestart");
-    }
-    public void cameraon()
-    {
-        PlayerCamera.SetActive(true);
-        levelcam.SetActive(false);
         gamecanvas.SetActive(true);
+    }
+    public void animationcomplete()
+    {
+        dropcamera.SetActive(false);
+    }
+    public void playeroff()
+    {
+        FindObjectOfType<complete>().playeroff();
+    }
+    public void animationcompleted()
+    {
+        FindObjectOfType<complete>().completeanim();
     }
 
 }

@@ -7,9 +7,11 @@ public class music : MonoBehaviour {
 
     private static music instance;
 
+
     private void Awake()
     {
-        if(instance!=null)
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        if (instance!=null)
         {
             Destroy(gameObject);
         }
@@ -18,10 +20,12 @@ public class music : MonoBehaviour {
             instance = this;
             DontDestroyOnLoad(transform.gameObject);
         }
+
     }
     private void Update()
     {
-        if(SceneManager.GetActiveScene().buildIndex==0 || SceneManager.GetActiveScene().buildIndex == 1)
+
+        if (SceneManager.GetActiveScene().buildIndex==0 || SceneManager.GetActiveScene().buildIndex == 1)
         {
             return;
         }

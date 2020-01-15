@@ -9,23 +9,21 @@ public class settingmanager : MonoBehaviour {
     public Slider music;
     private float gamemusicvolume;
     private float soundvolume;
-    public AudioSource gamemusic;
     public Button on_vibration;
     public Button off_vibration;
 	// Use this for initialization
 	void Start () {
         soundvolume = PlayerPrefs.GetFloat("sound", 1);
-        gamemusicvolume = PlayerPrefs.GetFloat("music", 1);
+        gamemusicvolume = PlayerPrefs.GetFloat("music", .4f);
         music.value = gamemusicvolume;
         sound.value = soundvolume;
-       // DontDestroyOnLoad(gameObject);
+
     }
 	
 	// Update is called once per frame
 	void Update () {
         gamemusicvolume = music.value;
         soundvolume = sound.value;
-        gamemusic.volume = gamemusicvolume;
         if(PlayerPrefs.GetInt("vibration", 1)==1)
         {
             off_vibration.interactable = true;

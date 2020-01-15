@@ -15,7 +15,7 @@ public class shop : MonoBehaviour
     float speed_v,accelration_v,handling_v,nitro_v;
     public Image speed_i,acceleration_i,handling_i,nitro_i;
     public TextMeshProUGUI  buytext,buytext2;
-    public TextMeshProUGUI costs, costs2,cost3,cost4,moneyneed;
+    public TextMeshProUGUI costs, costs2,cost3,cost4,moneyneed, moneyneed2;
     int cost, selectedcharacter,diff;
     bool sold;
     GameObject spawnned;
@@ -135,7 +135,8 @@ public class shop : MonoBehaviour
                 vehcial.SetActive(false);
                 money_needed.SetActive(true);
                 diff = cost - money;
-                moneyneed.text = diff.ToString() + " More money needed";
+                moneyneed.text = diff.ToString();
+                moneyneed2.text = diff.ToString();
             }
                
         }

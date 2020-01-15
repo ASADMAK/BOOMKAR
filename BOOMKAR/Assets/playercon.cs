@@ -27,9 +27,7 @@ public class playercon : MonoBehaviour
     public float maxBreakTorque;
     private float heighestspeed;
     private float speedfactor, currentsteer;
-    private float distancetoground;
 
-    private bool isgrounded = false;
     private bool turningleft;
     private bool turningright;
     private bool isbreaking;
@@ -89,6 +87,7 @@ public class playercon : MonoBehaviour
         skin = PlayerPrefs.GetInt("Skin", 0);
         minsteeringAngle = 30;
         maxSteeringAngle = PlayerPrefs.GetFloat("steer", 30);
+        Time.timeScale = 1;
     }
 
     public void Start()
@@ -114,7 +113,7 @@ public class playercon : MonoBehaviour
         onlyonceaudio = false;
         onlyonce = false;
         onlyoncecrash = false;
-        distancetoground = GetComponent<Collider>().bounds.extents.y;
+
 
     }
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
@@ -138,8 +137,7 @@ public class playercon : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (isgrounded == true)
-        {
+
             speedfactor = rb.velocity.magnitude / heighestspeed;
             currentsteer = Mathf.Lerp(maxSteeringAngle, minsteeringAngle, speedfactor);
             float motor = maxMotorTorque * forward;
@@ -202,18 +200,7 @@ public class playercon : MonoBehaviour
             {
                 rb.velocity = Vector3.ClampMagnitude(rb.velocity, heighestspeed);
             }
-        }
-        if (!Physics.Raycast(transform.position, -Vector3.up, distancetoground + .5f))
-        {
-            isgrounded = false;
 
-        }
-        else
-        {
-            isgrounded = true;
-
-
-        }
 
     }
     public void Update()
@@ -302,12 +289,10 @@ public class playercon : MonoBehaviour
     }
     public void tirebreak()
     {
-        if (isgrounded == true)
-        { 
+
         isbreaking = true;
         if (!carbreaks[skin].isPlaying)
             carbreaks[skin].Play();
-    }
     }
     public void tirebreakoff()
     {
@@ -376,8 +361,7 @@ public class playercon : MonoBehaviour
         {
             coinsound.Play();
         }
-        if (vibrate == 1)
-            Handheld.Vibrate();
+
     }
     public void gamepaused()
     {
@@ -406,6 +390,7 @@ public class playercon : MonoBehaviour
             }
         }
         rb.mass = 100000;
+        gamepaused();
 
     }
 
@@ -472,10 +457,11 @@ public class playercon : MonoBehaviour
         fuelmeter.value = PlayerPrefs.GetFloat("fuel", 200);
         onlyonceaudio = false;
         rb.mass = 3000;
+        Time.timeScale = 1;
     }
     public void playerstationary()
     {
-        transform.position = new Vector3(-1, 1.73f, -232.87f);
+        Time.timeScale = 0;
     }
     public void textto()
     {
@@ -491,7 +477,7 @@ public class playercon : MonoBehaviour
         {
             bookscollected[i].text = floppycollected.ToString();
         }
-        
+
     }
 
 }

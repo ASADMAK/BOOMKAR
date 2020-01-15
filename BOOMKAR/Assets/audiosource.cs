@@ -6,26 +6,20 @@ public class audiosource : MonoBehaviour {
 
     public AudioSource[] audiosources;
     public AudioSource backgroundmusic;
+
     float volume;
-	// Use this for initialization
-	void Start () {
-        volume = PlayerPrefs.GetFloat("sound", 1);
-        for (int i = 0; i < audiosources.Length; i++)
-        {
-            audiosources[i].volume = volume;
-        }
-        if(volume==1)
-        {
-            backgroundmusic.volume = .3f;
-        }
-        else
-        {
-            backgroundmusic.volume = 0;
-        }
+    // Use this for initialization
+
+    // Update is called once per frame
+    void Update () {
+
+            volume = PlayerPrefs.GetFloat("sound", 1);
+            backgroundmusic.volume = PlayerPrefs.GetFloat("music", .4f);
+            for (int i = 0; i < audiosources.Length; i++)
+            {
+                audiosources[i].volume = volume;
+            }
+ 
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

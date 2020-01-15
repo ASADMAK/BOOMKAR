@@ -8,8 +8,9 @@ public class gamemanagar : MonoBehaviour {
    
     public void changescene(int n)
     {
-        SceneManager.LoadScene(n);
         Time.timeScale = 1;
+        SceneManager.LoadScene(n);
+        
     }
     public void gamepause()
     {
@@ -17,8 +18,9 @@ public class gamemanagar : MonoBehaviour {
     }
     public void retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+       
     }
     public void gameresume()
     {
@@ -26,7 +28,9 @@ public class gamemanagar : MonoBehaviour {
     }
     public void nextlevel()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+       
     }
 
     public void menu()

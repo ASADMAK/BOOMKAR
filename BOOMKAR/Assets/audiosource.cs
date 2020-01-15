@@ -6,6 +6,7 @@ public class audiosource : MonoBehaviour {
 
     public AudioSource[] audiosources;
     public AudioSource backgroundmusic;
+    public AudioSource coin;
 
     float volume;
     // Use this for initialization
@@ -19,6 +20,14 @@ public class audiosource : MonoBehaviour {
             {
                 audiosources[i].volume = volume;
             }
+            if(volume>.5f)
+            {
+            coin.volume = .5f;
+            }
+            else
+            {
+            coin.volume = 0;
+        }
  
     }
 

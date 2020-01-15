@@ -62,7 +62,7 @@ public class playercon : MonoBehaviour
     private int currentlevel;
 
     public AudioSource[] engine;
-    public AudioSource[] carbreaks;
+    public AudioSource carbreaks;
     public AudioSource carcrash;
     public AudioSource gascan;
     public AudioSource coinsound;
@@ -291,8 +291,8 @@ public class playercon : MonoBehaviour
     {
 
         isbreaking = true;
-        if (!carbreaks[skin].isPlaying)
-            carbreaks[skin].Play();
+        if (!carbreaks.isPlaying)
+            carbreaks.Play();
     }
     public void tirebreakoff()
     {
@@ -300,7 +300,7 @@ public class playercon : MonoBehaviour
         isbreaking = false;
         isreverse = false;
         forward = 0;
-        carbreaks[skin].Stop();
+        carbreaks.Stop();
     }
     public void booston()
     {

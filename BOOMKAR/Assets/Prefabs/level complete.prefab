@@ -145,6 +145,7 @@ MonoBehaviour:
   dropship: {fileID: 0}
   levelcompleted: {fileID: 0}
   player: {fileID: 0}
+  dropcamera: {fileID: 0}
   drop: {fileID: 0}
   dropcam: {fileID: 0}
 --- !u!65 &65501759944141822
@@ -158,5 +159,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9726171, y: 13.563007, z: 0.33729935}
-  m_Center: {x: -0.024177235, y: 5.448452, z: 0.21}
+  m_Size: {x: 0.7904005, y: 2.0732558, z: 0.6383223}
+  m_Center: {x: 0.01960985, y: -0.29642424, z: 0.037594438}

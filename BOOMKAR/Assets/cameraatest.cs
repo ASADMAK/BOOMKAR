@@ -25,7 +25,7 @@ public class cameraatest : MonoBehaviour
         }
         cam[n].SetActive(true);
         n++;
-        if(n>8)
+        if(n>3)
         {
             n = 0;
         }

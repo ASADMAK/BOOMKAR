@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1.43
-  m_AmbientMode: 1
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 8e8e6353088b99a42981414986f4527b, type: 2}
   m_HaloStrength: 0.5
@@ -1223,12 +1223,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuelprefab: {fileID: 1029590238319914, guid: d68e82ca4ce59144f9b0dbb05b0f6edf, type: 3}
---- !u!1 &89642417 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1161904646311256, guid: 8b04c9a92d033b94789a763e7c55842d,
-    type: 3}
-  m_PrefabInstance: {fileID: 8023587729304050269}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &95981600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10281,15 +10275,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec3825e96cc5a2478e812d65ce4f91c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 1362091638}
   player: {fileID: 1809039503}
-  dropship: {fileID: 1053727202}
-  levelcam: {fileID: 539311672}
-  carcontrol: {fileID: 89642417}
-  anim: {fileID: 539311676}
-  playercam: {fileID: 1397222334}
   dropcam: {fileID: 1397222334}
   gamecanvas: {fileID: 686966965}
+  dropcamera: {fileID: 0}
 --- !u!1001 &549017288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27154,12 +27143,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1123372359}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1362091638 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1711890941002634, guid: ef9800723ef56b747b7f6dbe17b83ee8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1378538058}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1365388214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4724588042253990, guid: c070dd170a835104383550817e3b4c8d,
@@ -39318,6 +39301,7 @@ MonoBehaviour:
   - {fileID: 922219860}
   - {fileID: 807582500}
   backgroundmusic: {fileID: 350998302}
+  coin: {fileID: 0}
 --- !u!1 &1977813505 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1962636642785244, guid: 3903cc7fef88f824fbe38559fe341df5,

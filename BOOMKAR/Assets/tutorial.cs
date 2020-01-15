@@ -31,23 +31,24 @@ public class tutorial : MonoBehaviour {
     {
         tutorial3.SetActive(true);
         carcontrol.SetActive(false);
-        FindObjectOfType<gamemanagar>().gamepause();
+        FindObjectOfType<playercon>().gamepaused();
         meter.SetActive(true);
     }
 
     public void pause()
     {
-        FindObjectOfType<gamemanagar>().gamepause();
+        FindObjectOfType<playercon>().gamepaused();
     }
     public void tutorial4active()
     {
-        Invoke("ontu", 5);
+        Invoke("ontu", 3);
 
     }
     public void ontu()
     {
         tutorail4.SetActive(true);
         carcontrol.SetActive(false);
+        FindObjectOfType<playercon>().gamepaused();
     }
     public void tutorial5active()
     {
@@ -59,11 +60,12 @@ public class tutorial : MonoBehaviour {
         carcontrol.SetActive(false);
         floppy.SetActive(false);
         meter.SetActive(true);
+        FindObjectOfType<playercon>().gamepaused();
     }
     public void tutorial6active()
     {
         tutorial6.SetActive(true);
-        FindObjectOfType<gamemanagar>().gamepause();
+        FindObjectOfType<playercon>().gamepaused();
         carcontrol.SetActive(false);
    
     }
@@ -80,5 +82,9 @@ public class tutorial : MonoBehaviour {
     public void floppycactive()
     {
         floppy.SetActive(true);
+    }
+    public void gameresume()
+    {
+        FindObjectOfType<playercon>().gameison();
     }
 }

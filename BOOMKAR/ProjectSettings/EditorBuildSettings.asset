@@ -17,31 +17,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Session - !/LEVEL 1.unity
     guid: df7216d63aa30054e9248d18567dcbea
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Session - !/LEVEL 2.unity
     guid: d7841b0933eb5f4469d3e49db8641ab4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Session - !/LEVEL 3.unity
     guid: 1f94d18f0a327854fae4c329b18c1ee8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Session - !/LEVEL 4.unity
     guid: 4fceb00123d9f6b4fbd05ad19e1f6614
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Session - !/LEVEL 5.unity
     guid: b8a786ac7f6db5e4c98b265e4901de24
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Session - !/LEVEL 6.unity
     guid: 2bc6cc9e6b81e4542b3cbd346e63a31d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Session - !/LEVEL 7.unity
     guid: 5a24bfd262ef107409caba950192d912
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Session - !/LEVEL 8.unity
     guid: d49a017f1a07b834aae671c54819079d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Session - !/LEVEL 9.unity
     guid: 2701419c17aac8249bdeae9f5e26ff05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Session - !/LEVEL 10.unity
     guid: 8b0cca24de0eae14ea4b0a370db9b7ba
   m_configObjects: {}

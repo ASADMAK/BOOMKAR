@@ -18053,12 +18053,12 @@ GameObject:
   - component: {fileID: 7781092455634713048}
   - component: {fileID: 2832662699015219635}
   m_Layer: 0
-  m_Name: PLAYER
+  m_Name: player
   m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2832662699039893031
 Transform:
   m_ObjectHideFlags: 0
@@ -18160,13 +18160,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  carbreaks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  carbreaks: {fileID: 0}
   carcrash: {fileID: 0}
   gascan: {fileID: 0}
   coinsound: {fileID: 0}
@@ -41412,7 +41406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3779059094260470701
 Transform:
   m_ObjectHideFlags: 0
@@ -54917,8 +54911,8 @@ MonoBehaviour:
   - {fileID: 2151864431828676882}
   - {fileID: 8548201760330601372}
   - {fileID: 3352990169033203773}
-  - {fileID: 5400322070102793432}
   - {fileID: 3589489265036211958}
+  - {fileID: 5400322070102793432}
 --- !u!1 &8425811347568622254
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,19 +7,47 @@ using UnityEngine.SceneManagement;
 
 public class unityads : MonoBehaviour {
 
-    string gameId = "1234567";
+    string gameId = "3434051";
     bool testMode = true;
     int timer;
+    string placementId = "banner";
 
+    public void Awake()
+    {
+        Advertisement.Initialize("3434051", true);
+
+    }
     public void Start()
     {
         Advertisement.Initialize(gameId, testMode);
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            StartCoroutine(ShowBannerWhenReady());
+        }
+        else
+        {
+            bannerad();
+        }
+    }
+    IEnumerator ShowBannerWhenReady()
+    {
+        while (!Advertisement.IsReady(placementId))
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+        Advertisement.Banner.SetPosition(BannerPosition.TOP_CENTER);
+        Advertisement.Banner.Show(placementId);
+
+    }
+    public void bannerad()
+    {
+        Advertisement.Banner.Hide(true);
     }
     public void showad()
     {
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
-            Advertisement.Initialize(gameId, true);
+
             timer = PlayerPrefs.GetInt("timer", 0);
             timer++;
             if (timer > 3)
@@ -47,8 +75,7 @@ public class unityads : MonoBehaviour {
         switch (result)
         {
             case ShowResult.Finished:
-                Debug.Log("The ad was successfully shown.");
-                Debug.Log("revived");
+
                 FindObjectOfType<playercon>().revived();
                 break;
             case ShowResult.Skipped:
@@ -75,8 +102,6 @@ public class unityads : MonoBehaviour {
         switch (result)
         {
             case ShowResult.Finished:
-                Debug.Log("The ad was successfully shown.");
-                Debug.Log("double");
                 doublecoin();
                 break;
             case ShowResult.Skipped:

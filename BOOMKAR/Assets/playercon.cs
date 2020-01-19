@@ -27,6 +27,7 @@ public class playercon : MonoBehaviour
     public float maxBreakTorque;
     private float heighestspeed;
     private float speedfactor, currentsteer;
+    private float fueltime=0;
 
     private bool turningleft;
     private bool turningright;
@@ -37,11 +38,19 @@ public class playercon : MonoBehaviour
     private bool onlyonce;
     private bool onlyonceaudio;
     private bool onlyoncecrash;
+    private bool spawnit;
 
 
     public GameObject finalindicator;
     public GameObject missionfailed, game;
     public GameObject watersplash;
+    public Transform fuelspawner1;
+    public Transform fuelspawner2;
+    public Transform fuelspawner3;
+    public Transform fuelspawner4;
+    public Transform fuelspawner5;
+    public Transform fuelspawner6;
+    public GameObject fuelprefab;
     public Slider fuelmeter;
     public Slider playerhealth;
 
@@ -113,6 +122,8 @@ public class playercon : MonoBehaviour
         onlyonceaudio = false;
         onlyonce = false;
         onlyoncecrash = false;
+        spawnit = false;
+        fuelspawn();
 
 
     }
@@ -262,6 +273,40 @@ public class playercon : MonoBehaviour
             }
         }
         playaudio();
+        if (spawnit == true)
+        {
+            fueltime += Time.deltaTime;
+            if (fueltime > 15)
+            {
+                if (fuelspawner1.childCount == 0 )
+                {
+                    Instantiate(fuelprefab, fuelspawner1);
+                }
+                if (fuelspawner2.childCount == 0)
+                {
+                    Instantiate(fuelprefab, fuelspawner2);
+                }
+                if (fuelspawner3.childCount == 0)
+                {
+                    Instantiate(fuelprefab, fuelspawner3);
+                }
+                if (fuelspawner4.childCount == 0)
+                {
+                    Instantiate(fuelprefab, fuelspawner4);
+                }
+                if (fuelspawner5.childCount == 0)
+                {
+                    Instantiate(fuelprefab, fuelspawner5);
+                }
+                if (fuelspawner6.childCount == 0)
+                {
+                    Instantiate(fuelprefab, fuelspawner6);
+                }
+                spawnit = false;
+                fueltime = 0;
+            }
+
+        }
     }
     public void leftturn()
     {
@@ -278,6 +323,7 @@ public class playercon : MonoBehaviour
     }
     public void refill_Fuel()
     {
+        spawnit = true;
         fuelmeter.value += 30;
         gascanno++;
         if(!gascan.isPlaying)
@@ -391,6 +437,7 @@ public class playercon : MonoBehaviour
         }
         rb.mass = 100000;
         gamepaused();
+        FindObjectOfType<unityads>().bannerad();
 
     }
 
@@ -478,6 +525,15 @@ public class playercon : MonoBehaviour
             bookscollected[i].text = floppycollected.ToString();
         }
 
+    }
+    private void fuelspawn()
+    {
+        Instantiate(fuelprefab, fuelspawner1);
+        Instantiate(fuelprefab, fuelspawner2);
+        Instantiate(fuelprefab, fuelspawner3);
+        Instantiate(fuelprefab, fuelspawner4);
+        Instantiate(fuelprefab, fuelspawner5);
+        Instantiate(fuelprefab, fuelspawner6);
     }
 
 }

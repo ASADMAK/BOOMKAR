@@ -41,21 +41,22 @@ public class unityads : MonoBehaviour {
     }
     public void bannerad()
     {
-        Advertisement.Banner.Hide(true);
+        Advertisement.Banner.Hide(false);
+        
     }
     public void showad()
     {
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
 
-            timer = PlayerPrefs.GetInt("timer", 0);
+            timer = PlayerPrefs.GetInt("counting", 0);
             timer++;
-            if (timer > 3)
+            if (timer < 3)
             {
                 Advertisement.Show();
                 timer = 0;
             }
-            PlayerPrefs.SetInt("timer", timer);
+            PlayerPrefs.SetInt("counting", timer);
            
         }
 

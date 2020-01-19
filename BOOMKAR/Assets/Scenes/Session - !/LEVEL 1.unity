@@ -7050,7 +7050,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 403029408}
-  - component: {fileID: 403029409}
   m_Layer: 4
   m_Name: fuel_spawner (4)
   m_TagString: Untagged
@@ -7073,20 +7072,6 @@ Transform:
   m_Father: {fileID: 1521862065}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &403029409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114356265267927946, guid: 0611644e60ada9a47b794ec0bf11ed13,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403029407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cea41072ffce5e94d82864182938e5e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fuelprefab: {fileID: 1029590238319914, guid: d68e82ca4ce59144f9b0dbb05b0f6edf, type: 3}
 --- !u!1001 &407383184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7197,7 +7182,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 415909374}
-  - component: {fileID: 415909375}
   m_Layer: 4
   m_Name: fuel_spawner (3)
   m_TagString: Untagged
@@ -7220,20 +7204,6 @@ Transform:
   m_Father: {fileID: 1521862065}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &415909375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114356265267927946, guid: 0611644e60ada9a47b794ec0bf11ed13,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 415909373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cea41072ffce5e94d82864182938e5e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fuelprefab: {fileID: 1029590238319914, guid: d68e82ca4ce59144f9b0dbb05b0f6edf, type: 3}
 --- !u!1 &416347377
 GameObject:
   m_ObjectHideFlags: 0
@@ -8040,7 +8010,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 460108873}
-  - component: {fileID: 460108874}
   m_Layer: 4
   m_Name: fuel_spawner (2)
   m_TagString: Untagged
@@ -8057,26 +8026,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460108872}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -3.19, y: 0, z: -2.6}
+  m_LocalPosition: {x: 9.4, y: 0, z: -9.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1521862065}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &460108874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114356265267927946, guid: 0611644e60ada9a47b794ec0bf11ed13,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 460108872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cea41072ffce5e94d82864182938e5e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fuelprefab: {fileID: 1029590238319914, guid: d68e82ca4ce59144f9b0dbb05b0f6edf, type: 3}
 --- !u!1001 &467133535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10807,6 +10762,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &591643231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 591643232}
+  m_Layer: 4
+  m_Name: fuel_spawner (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &591643232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591643231}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -40.9, y: 0, z: -9.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1521862065}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &597428742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17799,6 +17784,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 879542801}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &884242216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 884242217}
+  m_Layer: 4
+  m_Name: fuel_spawner (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &884242217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884242216}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -60.5, y: 0, z: 38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1521862065}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &888719759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21263,6 +21278,31 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112723294}
   m_Mesh: {fileID: 4300004, guid: 775c39df94b37764cb2a59b228dab94e, type: 3}
+--- !u!1 &1114932500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4265398302544137384, guid: 5fd37402785041c489eceeae67731bd4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2832662697493850403}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1114932503
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114932500}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95d018664b8051749a7545fafad0ff85, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1117539406
 GameObject:
   m_ObjectHideFlags: 0
@@ -23327,6 +23367,36 @@ Transform:
   - {fileID: 1877566013}
   m_Father: {fileID: 0}
   m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1261739557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1261739558}
+  m_Layer: 4
+  m_Name: fuel_spawner (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1261739558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261739557}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 1.2, y: 0, z: 93.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1521862065}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1267843099
 PrefabInstance:
@@ -27469,6 +27539,9 @@ Transform:
   - {fileID: 460108873}
   - {fileID: 415909374}
   - {fileID: 403029408}
+  - {fileID: 591643232}
+  - {fileID: 884242217}
+  - {fileID: 1261739558}
   m_Father: {fileID: 1877566013}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -37468,6 +37541,26 @@ PrefabInstance:
       propertyPath: tracking
       value: 
       objectReference: {fileID: 2010462403}
+    - target: {fileID: 273528106147280701, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 273528106147280701, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 273528106147280701, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 273528106147280701, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 818062142222539803, guid: 5fd37402785041c489eceeae67731bd4,
         type: 3}
       propertyPath: skidmarksController
@@ -37483,6 +37576,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2832662698279949998, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2832662698472303778, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2832662699015219628, guid: 5fd37402785041c489eceeae67731bd4,
         type: 3}
       propertyPath: m_Name
@@ -37491,7 +37594,12 @@ PrefabInstance:
     - target: {fileID: 2832662699015219628, guid: 5fd37402785041c489eceeae67731bd4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2832662699015219635, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: fuelspawner.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2832662699015219635, guid: 5fd37402785041c489eceeae67731bd4,
         type: 3}
@@ -37678,6 +37786,57 @@ PrefabInstance:
       propertyPath: carbreaks
       value: 
       objectReference: {fileID: 980182694}
+    - target: {fileID: 2832662699015219635, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: fuelspawner.Array.data[0]
+      value: 
+      objectReference: {fileID: 460108873}
+    - target: {fileID: 2832662699015219635, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: fuelspawner.Array.data[1]
+      value: 
+      objectReference: {fileID: 415909374}
+    - target: {fileID: 2832662699015219635, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: fuelspawner.Array.data[2]
+      value: 
+      objectReference: {fileID: 403029408}
+    - target: {fileID: 2832662699015219635, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: fuelprefab
+      value: 
+      objectReference: {fileID: 1029590238319914, guid: d68e82ca4ce59144f9b0dbb05b0f6edf,
+        type: 3}
+    - target: {fileID: 2832662699015219635, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: fuelspawner1
+      value: 
+      objectReference: {fileID: 460108873}
+    - target: {fileID: 2832662699015219635, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: fuelspawner2
+      value: 
+      objectReference: {fileID: 415909374}
+    - target: {fileID: 2832662699015219635, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: fuelspawner3
+      value: 
+      objectReference: {fileID: 403029408}
+    - target: {fileID: 2832662699015219635, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: fuelspawner4
+      value: 
+      objectReference: {fileID: 591643232}
+    - target: {fileID: 2832662699015219635, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: fuelspawner5
+      value: 
+      objectReference: {fileID: 884242217}
+    - target: {fileID: 2832662699015219635, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: fuelspawner6
+      value: 
+      objectReference: {fileID: 1261739558}
     - target: {fileID: 2832662699039893031, guid: 5fd37402785041c489eceeae67731bd4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37733,6 +37892,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2832662699102182427, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3352990169033203773, guid: 5fd37402785041c489eceeae67731bd4,
         type: 3}
       propertyPath: m_IsActive
@@ -37748,6 +37912,11 @@ PrefabInstance:
       propertyPath: skidmarksController
       value: 
       objectReference: {fileID: 1418835377}
+    - target: {fileID: 4265398302544137384, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4859171156249554274, guid: 5fd37402785041c489eceeae67731bd4,
         type: 3}
       propertyPath: tracking
@@ -37756,7 +37925,7 @@ PrefabInstance:
     - target: {fileID: 5400322070102793432, guid: 5fd37402785041c489eceeae67731bd4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5446217155078856925, guid: 5fd37402785041c489eceeae67731bd4,
         type: 3}
@@ -37787,6 +37956,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8580311133473277214, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.67754155
+      objectReference: {fileID: 0}
+    - target: {fileID: 8580311133473277214, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6775416
+      objectReference: {fileID: 0}
+    - target: {fileID: 8580311133473277214, guid: 5fd37402785041c489eceeae67731bd4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6775416
       objectReference: {fileID: 0}
     - target: {fileID: 8910412257651549610, guid: 5fd37402785041c489eceeae67731bd4,
         type: 3}
@@ -38059,6 +38243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224974344215346812, guid: 8b04c9a92d033b94789a763e7c55842d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.600052
       objectReference: {fileID: 0}
     - target: {fileID: 459646916649787698, guid: 8b04c9a92d033b94789a763e7c55842d,
         type: 3}

@@ -9,7 +9,6 @@ public class fuelspawner : MonoBehaviour {
         if (other.tag == "player")
         {
             FindObjectOfType<playercon>().refill_Fuel();
-            FindObjectOfType<fuel>().startspawning();
             Destroy(gameObject);
         }
     }

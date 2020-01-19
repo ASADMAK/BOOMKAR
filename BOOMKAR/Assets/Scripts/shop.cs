@@ -225,8 +225,8 @@ public class shop : MonoBehaviour
                 handling_v = .5f;
                 accelration_v = .5f;
                 nitro_v = .4f;
-                fuel = 200;
-                health = 50;
+                fuel = 150;
+                health = 25;
                 speed = 20;
                 steer = 30;
                 break;
@@ -250,8 +250,8 @@ public class shop : MonoBehaviour
                 handling_v = .5f;
                 accelration_v = .6f;
                 nitro_v = .6f;
-                fuel = 200;
-                health = 50;
+                fuel = 150;
+                health = 30;
                 speed = 30;
                 steer = 35;
                 break;
@@ -276,8 +276,8 @@ public class shop : MonoBehaviour
                 handling_v = .8f;
                 accelration_v = .5f;
                 nitro_v = .8f;
-                fuel = 250;
-                health = 70;
+                fuel = 200;
+                health = 35;
                 speed = 25;
                 steer = 40;
                 break;
@@ -302,8 +302,8 @@ public class shop : MonoBehaviour
                 handling_v = .7f;
                 accelration_v = .8f;
                 nitro_v = .7f;
-                fuel = 250;
-                health = 80;
+                fuel = 200;
+                health = 45;
                 speed = 30;
                 steer = 45;
                 break;
@@ -329,7 +329,7 @@ public class shop : MonoBehaviour
                 accelration_v = .9f;
                 nitro_v = .8f;
                 fuel = 300;
-                health = 100;
+                health = 50;
                 speed = 35;
                 steer = 50;
                 break;
@@ -355,8 +355,8 @@ public class shop : MonoBehaviour
                 handling_v = .9f;
                 accelration_v = .9f;
                 nitro_v = .9f;
-                fuel = 400;
-                health = 120;
+                fuel = 300;
+                health = 50;
                 speed = 35;
                 steer = 55;
                 break;

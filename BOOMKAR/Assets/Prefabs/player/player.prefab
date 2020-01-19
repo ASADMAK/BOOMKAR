@@ -17958,6 +17958,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5420074413617078176}
   - component: {fileID: 171296403800607173}
+  - component: {fileID: 6142667990550439992}
   m_Layer: 0
   m_Name: floppy2
   m_TagString: Untagged
@@ -17994,6 +17995,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tracking: {fileID: 0}
   center: {fileID: 2832662699039893031}
+--- !u!95 &6142667990550439992
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832662698279949998}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56a90e084ced1e84dae676804df9576e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2832662698472303778
 GameObject:
   m_ObjectHideFlags: 0
@@ -18004,6 +18024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5937783432333277433}
   - component: {fileID: 1210777160607970755}
+  - component: {fileID: 3815596019526552035}
   m_Layer: 0
   m_Name: floppy3
   m_TagString: Untagged
@@ -18040,6 +18061,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tracking: {fileID: 0}
   center: {fileID: 2832662699039893031}
+--- !u!95 &3815596019526552035
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832662698472303778}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a579060fe42845d4490881c1d3a8d08d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2832662699015219628
 GameObject:
   m_ObjectHideFlags: 0
@@ -18135,6 +18175,13 @@ MonoBehaviour:
   missionfailed: {fileID: 0}
   game: {fileID: 0}
   watersplash: {fileID: 0}
+  fuelspawner1: {fileID: 0}
+  fuelspawner2: {fileID: 0}
+  fuelspawner3: {fileID: 0}
+  fuelspawner4: {fileID: 0}
+  fuelspawner5: {fileID: 0}
+  fuelspawner6: {fileID: 0}
+  fuelprefab: {fileID: 1029590238319914, guid: d68e82ca4ce59144f9b0dbb05b0f6edf, type: 3}
   fuelmeter: {fileID: 0}
   playerhealth: {fileID: 0}
   minfloopy: {fileID: 0}
@@ -18179,6 +18226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5091710920574519258}
   - component: {fileID: 5446217155078856925}
+  - component: {fileID: 6098909936935555184}
   m_Layer: 0
   m_Name: floppy1
   m_TagString: Untagged
@@ -18215,6 +18263,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tracking: {fileID: 0}
   center: {fileID: 2832662699039893031}
+--- !u!95 &6098909936935555184
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832662699102182427}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 626de90b22b136942b88fcae30578fae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2835235916278263431
 GameObject:
   m_ObjectHideFlags: 0
@@ -20428,6 +20495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8580311133473277214}
   - component: {fileID: 4859171156249554274}
+  - component: {fileID: 1114932503}
   m_Layer: 0
   m_Name: final indicaor
   m_TagString: Untagged
@@ -20444,7 +20512,7 @@ Transform:
   m_GameObject: {fileID: 4265398302544137384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.13800001, z: 2.057}
-  m_LocalScale: {x: 0.67754155, y: 0.67754155, z: 0.67754155}
+  m_LocalScale: {x: 0.67754155, y: 0.6775416, z: 0.6775416}
   m_Children:
   - {fileID: 4901461363206141947}
   m_Father: {fileID: 5687274353557033098}
@@ -20464,6 +20532,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tracking: {fileID: 0}
   center: {fileID: 2832662699039893031}
+--- !u!95 &1114932503
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4265398302544137384}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95d018664b8051749a7545fafad0ff85, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4279606472453966171
 GameObject:
   m_ObjectHideFlags: 0
@@ -41406,7 +41493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3779059094260470701
 Transform:
   m_ObjectHideFlags: 0

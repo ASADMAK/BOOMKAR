@@ -39,6 +39,7 @@ public class playercon : MonoBehaviour
     private bool onlyonceaudio;
     private bool onlyoncecrash;
     private bool spawnit;
+    private bool onlyoncefuel;
 
 
     public GameObject finalindicator;
@@ -123,6 +124,7 @@ public class playercon : MonoBehaviour
         onlyonce = false;
         onlyoncecrash = false;
         spawnit = false;
+        onlyoncefuel = false;
         fuelspawn();
 
 
@@ -276,7 +278,7 @@ public class playercon : MonoBehaviour
         if (spawnit == true)
         {
             fueltime += Time.deltaTime;
-            if (fueltime > 15)
+            if (fueltime > 30)
             {
                 if (fuelspawner1.childCount == 0 )
                 {
@@ -323,8 +325,17 @@ public class playercon : MonoBehaviour
     }
     public void refill_Fuel()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            if (onlyoncefuel == false)
+            {
+
+                FindObjectOfType<tutorial>().tutorial7active();
+                onlyoncefuel = true;
+            }
+        }
         spawnit = true;
-        fuelmeter.value += 30;
+        fuelmeter.value += 90;
         gascanno++;
         if(!gascan.isPlaying)
         {

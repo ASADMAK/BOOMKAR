@@ -9,6 +9,7 @@ public class tutorial : MonoBehaviour {
     public GameObject tutorail4;
     public GameObject tutorial5;
     public GameObject tutorial6;
+    public GameObject fueltext;
     public GameObject meter,floppy,coin;
     public GameObject carcontrol;
 
@@ -68,6 +69,13 @@ public class tutorial : MonoBehaviour {
         FindObjectOfType<playercon>().gamepaused();
         carcontrol.SetActive(false);
    
+    }
+    public void tutorial7active()
+    {
+        fueltext.SetActive(true);
+        FindObjectOfType<playercon>().gamepaused();
+        carcontrol.SetActive(false);
+
     }
 
     public void tutorial2()

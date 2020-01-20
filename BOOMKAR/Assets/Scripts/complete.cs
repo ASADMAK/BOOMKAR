@@ -21,6 +21,7 @@ public class complete : MonoBehaviour {
         {
             if (other.tag == "player")
             {
+                game.SetActive(false);
                 dropcamera.SetActive(true);
                 dropcam.depth = 2;
                 dropship.SetActive(true);
@@ -35,7 +36,6 @@ public class complete : MonoBehaviour {
     public void completeanim()
     {
         missioncomplete.SetActive(true);
-        game.SetActive(false);
         levelcompleted.Play();
     }
     // Update is called once per frame

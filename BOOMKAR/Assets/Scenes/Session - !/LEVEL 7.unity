@@ -22840,6 +22840,7 @@ GameObject:
   - component: {fileID: 780127341}
   - component: {fileID: 780127343}
   - component: {fileID: 780127342}
+  - component: {fileID: 780127344}
   m_Layer: 0
   m_Name: NEW RAMP (2)
   m_TagString: Untagged
@@ -22908,6 +22909,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780127340}
+  m_Mesh: {fileID: 4300000, guid: eb2fddbfd6ffe8c4bbddb7a6b52d0a3e, type: 3}
+--- !u!64 &780127344
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780127340}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: eb2fddbfd6ffe8c4bbddb7a6b52d0a3e, type: 3}
 --- !u!1 &785390394
 GameObject:
@@ -33887,6 +33902,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 7d9e10dec31531c409f176eff50650ae, type: 2}
     m_RemovedComponents:
     - {fileID: 64531501699853664, guid: 42b33f3118a5e264c8e1bb9e3f6198cc, type: 3}
+    - {fileID: 65120072449145930, guid: 42b33f3118a5e264c8e1bb9e3f6198cc, type: 3}
+    - {fileID: 136871722179138420, guid: 42b33f3118a5e264c8e1bb9e3f6198cc, type: 3}
+    - {fileID: 136582937623924730, guid: 42b33f3118a5e264c8e1bb9e3f6198cc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 42b33f3118a5e264c8e1bb9e3f6198cc, type: 3}
 --- !u!4 &1183197326 stripped
 Transform:
@@ -33894,6 +33912,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1183197325}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1183197327 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1511006058181546, guid: 42b33f3118a5e264c8e1bb9e3f6198cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1183197325}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1183197328
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183197327}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: eb2fddbfd6ffe8c4bbddb7a6b52d0a3e, type: 3}
 --- !u!1001 &1192278800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45059,6 +45097,7 @@ GameObject:
   - component: {fileID: 1556262999}
   - component: {fileID: 1556263001}
   - component: {fileID: 1556263000}
+  - component: {fileID: 1556263002}
   m_Layer: 0
   m_Name: NEW RAMP (1)
   m_TagString: Untagged
@@ -45127,6 +45166,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556262998}
+  m_Mesh: {fileID: 4300000, guid: eb2fddbfd6ffe8c4bbddb7a6b52d0a3e, type: 3}
+--- !u!64 &1556263002
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556262998}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: eb2fddbfd6ffe8c4bbddb7a6b52d0a3e, type: 3}
 --- !u!1001 &1557619881
 PrefabInstance:

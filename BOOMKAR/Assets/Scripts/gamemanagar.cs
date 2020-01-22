@@ -47,8 +47,14 @@ public class gamemanagar : MonoBehaviour {
         }
 
     }
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void insta()
+    {
+        Application.OpenURL("https://www.instagram.com/redcherrygames/");
+    }
+
+    public void facebook()
+    {
+        Application.OpenURL("https://www.facebook.com/redcherrygaming");
+    }
 }

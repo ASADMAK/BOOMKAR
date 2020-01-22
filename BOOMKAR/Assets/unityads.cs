@@ -8,15 +8,10 @@ using UnityEngine.SceneManagement;
 public class unityads : MonoBehaviour {
 
     string gameId = "3434051";
-    bool testMode = true;
+    bool testMode = false;
     int timer;
     string placementId = "banner";
 
-    public void Awake()
-    {
-        Advertisement.Initialize("3434051", true);
-
-    }
     public void Start()
     {
         Advertisement.Initialize(gameId, testMode);
@@ -48,16 +43,7 @@ public class unityads : MonoBehaviour {
     {
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
-
-            timer = PlayerPrefs.GetInt("counting", 0);
-            timer++;
-            if (timer < 3)
-            {
-                Advertisement.Show();
-                timer = 0;
-            }
-            PlayerPrefs.SetInt("counting", timer);
-           
+                Advertisement.Show();           
         }
 
     }

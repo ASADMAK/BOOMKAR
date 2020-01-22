@@ -107,7 +107,6 @@ public class playercon : MonoBehaviour
             FindObjectOfType<tutorial>().starttutorial();
         }
         money = PlayerPrefs.GetInt("gold", 0);
-        PlayerPrefs.SetInt("gold", 5000);//extra gold for testing;
         playerhealth.maxValue = PlayerPrefs.GetFloat("health", 50);
         fuelmeter.maxValue = PlayerPrefs.GetFloat("fuel", 200);
         playerhealth.value = PlayerPrefs.GetFloat("health", 50);

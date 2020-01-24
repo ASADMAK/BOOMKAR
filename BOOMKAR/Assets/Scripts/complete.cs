@@ -6,7 +6,7 @@ public class complete : MonoBehaviour {
 
     bool levelcomplete;
     public GameObject missioncomplete,game,dropship;
-    public AudioSource levelcompleted;
+    public AudioSource levelcompleted,dropplay;
     public GameObject player,dropcamera;
     public Animator drop;
     public Camera dropcam;
@@ -28,6 +28,7 @@ public class complete : MonoBehaviour {
                 drop.SetTrigger("level");
                 FindObjectOfType<playercon>().textto();
                 FindObjectOfType<playercon>().gamepaused();
+                dropplay.Play();
 
             }
         }

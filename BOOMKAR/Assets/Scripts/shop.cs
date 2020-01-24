@@ -375,4 +375,10 @@ public class shop : MonoBehaviour
         vehcial.SetActive(true);
         money_needed.SetActive(false);
     }
+    public void backbutton()
+    {
+        selectedcharacter = PlayerPrefs.GetInt("Skin", 0);
+        Destroy(spawnned);
+        onoff();
+    }
 }

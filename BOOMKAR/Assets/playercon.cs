@@ -334,7 +334,7 @@ public class playercon : MonoBehaviour
             }
         }
         spawnit = true;
-        fuelmeter.value += 90;
+        fuelmeter.value += 55;
         gascanno++;
         if(!gascan.isPlaying)
         {
